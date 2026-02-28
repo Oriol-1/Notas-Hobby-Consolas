@@ -1,0 +1,103 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Encabezados de tabla */
+th {
+    background-color: #0078D7; /* Azul */
+    color: #fff; /* Blanco */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Zebra striping para las filas */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover en las filas */
+tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.slider-container {
+    margin-top: 20px;
+}
+
+.slider {
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para las celdas de la columna "Nota" */
+td.col-nota {
+    background-color: #fff3e0; /* Naranja más claro */
+    color: #5a3c0c; /* Marrón oscuro */
+}
