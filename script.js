@@ -3,12 +3,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const headers = document.querySelectorAll("th");
     const searchInput = document.querySelector("#search-input");
     const searchButton = document.querySelector("#search-button");
-    // Seleccionamos el elemento del contador
+    const resetButton = document.querySelector("#reset-button"); 
     const contadorTexto = document.querySelector("#contador-juegos");
 
     let currentSort = {};
     let originalData = [];
     let currentData = []; 
+
+    // Función para aplicar el color de fondo dinámico según la nota
+    function obtenerEstiloNota(notaValor) {
+        const nota = parseFloat(notaValor);
+        
+        // Si la celda está vacía o no es un número, no aplicamos color
+        if (isNaN(nota)) return ""; 
+
+        if (nota >= 90) {
+            return "background-color: #b2fab4; color: black;"; // Verde clarito
+        } else if (nota >= 80) {
+            return "background-color: #388e3c; color: white;"; // Verde oscuro
+        } else if (nota >= 70) {
+            return "background-color: #fff59d; color: black;"; // Amarillo
+        } else if (nota >= 60) {
+            return "background-color: #ffcc80; color: black;"; // Naranja
+        } else {
+            return "background-color: #e53935; color: white;"; // Rojo (59 o inferior)
+        }
+    }
 
     // Cargar datos desde JSON
     fetch("datos.json")
@@ -22,14 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Renderizar tabla
     function renderTable(data) {
-        // ACTUALIZACIÓN: Actualiza el contador con el número de elementos del array actual
         if (contadorTexto) {
             contadorTexto.textContent = `Número de juegos: ${data.length}`;
         }
 
+        // Aplicamos el color azul grisáceo a la primera celda y la función de notas a la última
         tablaJuegos.innerHTML = data.map(juego => `
             <tr>
-                <td>${juego["Juego"]}</td>
+                <td style="background-color: #b0c4de; color: black; ">${juego["Juego"]}</td>
                 <td>${juego["Consola"]}</td>
                 <td>${juego["Marca consola"]}</td>
                 <td>${juego["Desarrollador"]}</td>
@@ -37,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${juego["Mes"]}</td>
                 <td>${juego["Año"]}</td>
                 <td>${juego["Pag"]}</td>
-                <td>${juego["Nota"]}</td>
+                <td style="${obtenerEstiloNota(juego["Nota"])}">${juego["Nota"]}</td>
             </tr>
         `).join("");
     }
@@ -86,5 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "Enter") {
             searchButton.click();
         }
+    });
+
+    // Evento para reiniciar la búsqueda
+    resetButton.addEventListener("click", () => {
+        searchInput.value = ""; 
+        currentData = [...originalData]; 
+        renderTable(currentData); 
+        currentSort = {}; 
     });
 });

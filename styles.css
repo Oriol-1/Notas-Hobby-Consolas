@@ -4,6 +4,22 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+	
+	/* 1. Ruta de la imagen (cambia 'imagen.png' por el nombre exacto de tu archivo) */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('images/hc_background.jpg');
+
+  /* 2. Hace que la imagen se repita hacia los lados y hacia abajo */
+  background-repeat: repeat;
+
+  /* 3. Controla el tamaño del patrón. Ajusta este número (ej. 200px, 400px) para que las letras se vean más grandes o más pequeñas */
+  background-size: 600px; 
+
+  /* 4. Opcional: Hace que el fondo se quede fijo mientras el usuario hace scroll hacia abajo */
+  background-attachment: fixed; 
+
+  /* 5. Un color de fondo azul de respaldo mientras carga la imagen */
+  background-color: #1a4f8b;
+	
 }
 
 .container {
@@ -14,7 +30,7 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
 }
 
@@ -100,4 +116,19 @@ tbody tr:hover {
 td.col-nota {
     background-color: #fff3e0; /* Naranja más claro */
     color: #5a3c0c; /* Marrón oscuro */
+}
+
+/* --- NUEVOS ESTILOS PARA EL BOTÓN DE REINICIO --- */
+#reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #db342a; /* Un tono gris elegante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #5a6268; /* Gris más oscuro al pasar el ratón */
 }
