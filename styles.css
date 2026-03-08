@@ -132,3 +132,34 @@ td.col-nota {
 #reset-button:hover {
     background-color: #5a6268; /* Gris más oscuro al pasar el ratón */
 }
+
+/* Estilos para los créditos y disclaimer */
+.creditos-autor {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f4f4f9; /* Un fondo muy clarito para separarlo del resto */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.creditos-autor p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.creditos-autor a {
+    color: #1da1f2; /* Color azul estilo enlace/Twitter */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.creditos-autor a:hover {
+    text-decoration: underline;
+    color: #0c85d0;
+}
+
+.texto-legal {
+    font-size: 0.85em;
+    color: #666 !important;
+}
