@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const estadoVacio     = document.getElementById("estado-vacio");
     const btnVistaTarjetas = document.getElementById("btn-vista-cards");
     const btnVistaTabla   = document.getElementById("btn-vista-tabla");
-    const btnFiltros      = document.getElementById("btn-filtros");
-    const panelFiltros    = document.getElementById("panel-filtros");
+    const btnFiltros           = document.getElementById("btn-filtros");
+    const panelFiltros         = document.getElementById("panel-filtros");
+    const panelFiltrosOverlay  = document.getElementById("panel-filtros-overlay");
+    const stickyControls       = document.querySelector(".sticky-controls");
     const filtrosActivos  = document.getElementById("filtros-activos");
     const filtrosBadge    = document.getElementById("filtros-badge");
     const chipsConsola    = document.getElementById("chips-consola");
@@ -451,20 +453,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ── TOGGLE PANEL FILTROS ────────────────────────────────────
+    function positionPanel() {
+        if (stickyControls) {
+            const rect = stickyControls.getBoundingClientRect();
+            panelFiltros.style.top      = rect.bottom + "px";
+            panelFiltros.style.left     = rect.left + "px";
+            panelFiltros.style.right    = (window.innerWidth - rect.right) + "px";
+            panelFiltros.style.maxHeight = (window.innerHeight - rect.bottom - 12) + "px";
+        }
+    }
+
     function togglePanel(force) {
         const willOpen = force !== undefined ? force : panelFiltros.hidden;
         if (willOpen) {
+            positionPanel();
             panelFiltros.hidden = false;
+            if (panelFiltrosOverlay) panelFiltrosOverlay.hidden = false;
             panelFiltros.classList.remove("panel-closing");
             panelFiltros.classList.add("panel-open");
         } else {
             panelFiltros.classList.remove("panel-open");
             panelFiltros.classList.add("panel-closing");
-            // Comprobar que el evento viene del propio panel (no de un hijo)
-            // para evitar que animaciones de badges lo disparen antes de tiempo
             panelFiltros.addEventListener("animationend", (e) => {
                 if (e.target !== panelFiltros) return;
                 panelFiltros.hidden = true;
+                if (panelFiltrosOverlay) panelFiltrosOverlay.hidden = true;
                 panelFiltros.classList.remove("panel-closing");
             }, { once: true });
         }
@@ -472,6 +485,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     btnFiltros.addEventListener("click", () => togglePanel());
+    if (panelFiltrosOverlay) {
+        panelFiltrosOverlay.addEventListener("click", () => togglePanel(false));
+    }
 
     // Cerrar panel o modal con Escape
     document.addEventListener("keydown", (e) => {
@@ -486,6 +502,47 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === modalJuego) closeModal();
     });
     modalClose.addEventListener("click", closeModal);
+
+    // ── STICKY CONTROLS: altura del header ─────
+    const siteHeader     = document.querySelector(".site-header");
+
+    function updateHeaderHeight() {
+        if (siteHeader) {
+            document.documentElement.style.setProperty(
+                "--header-h",
+                siteHeader.offsetHeight + "px"
+            );
+        }
+    }
+    function updateStickyControlsHeight() {
+        if (stickyControls) {
+            document.documentElement.style.setProperty(
+                "--sticky-controls-h",
+                stickyControls.offsetHeight + "px"
+            );
+        }
+    }
+    updateHeaderHeight();
+    updateStickyControlsHeight();
+    new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+    new ResizeObserver(updateStickyControlsHeight).observe(stickyControls);
+
+    // Cerrar el panel de filtros al hacer scroll hacia abajo
+    let lastScrollY = window.scrollY;
+    let scrollTicking = false;
+    window.addEventListener("scroll", () => {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(() => {
+            const currentScrollY = window.scrollY;
+            // Solo cierra al bajar más de 8px para evitar falsos positivos
+            if (currentScrollY > lastScrollY + 8 && !panelFiltros.hidden) {
+                togglePanel(false);
+            }
+            lastScrollY = currentScrollY;
+            scrollTicking = false;
+        });
+    }, { passive: true });
 
     // ── MODAL: ABRIR Y CERRAR ────────────────────────────────────
     function openModal(juego) {

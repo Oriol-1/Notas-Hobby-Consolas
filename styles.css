@@ -172,13 +172,29 @@ body {
     padding: 24px 16px;
 }
 
+/* ── STICKY CONTROLS (buscador + plataformas) ─────────────────────── */
+.sticky-controls {
+    position: sticky;
+    top: var(--header-h, 0px);
+    z-index: 90;
+    /* Neutraliza el padding horizontal del .container para cubrir todo el ancho */
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 12px 16px 0;
+    background: rgba(5, 11, 25, 0.96);
+    backdrop-filter: blur(22px) saturate(1.4);
+    -webkit-backdrop-filter: blur(22px) saturate(1.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
 /* ── TOOLBAR ───────────────────────────────────────────────────── */
 .toolbar {
     display: flex;
     gap: 12px;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .search-wrapper {
@@ -817,10 +833,11 @@ td.td-nota { text-align: center; }
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    padding: 14px 0 12px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 14px;
+    padding: 10px 0 12px;
+    /* Los bordes los gestiona .sticky-controls; sin bordes propios */
+    border-top: none;
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .btn-plat {
@@ -1177,43 +1194,151 @@ td.td-nota { text-align: center; }
     box-shadow: 0 0 18px rgba(255, 50, 50, 0.25);
 }
 
+/* ── PANEL FILTROS: siempre fixed (está fuera del container al final del body) ── */
+/* El top y maxHeight los calcula positionPanel() en JS con getBoundingClientRect   */
+.panel-filtros {
+    position: fixed !important;
+    bottom: auto;
+    z-index: 95;
+    overflow-y: auto;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-top: none;
+    margin-bottom: 0;
+}
+
 /* ── RESPONSIVE ────────────────────────────────────────────────── */
 
-/* Tablet */
+/* ── Tablet y móvil (≤ 1024px): header y consolas se van al scroll ── */
 @media (max-width: 1024px) {
+    /* Header NO sticky */
+    .site-header {
+        position: relative;
+    }
+    /* Solo el buscador es sticky, pegado al borde superior */
+    .sticky-controls {
+        top: 0;
+    }
     .vista-cards {
         grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
         gap: 14px;
     }
-}
 
-/* Mobile */
-@media (max-width: 640px) {
-    .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .header-credits { text-align: left; }
-    .header-links { justify-content: flex-start; }
-    .texto-legal { max-width: 100%; }
-
-    .toolbar { flex-direction: column; align-items: stretch; }
-    .search-wrapper { min-width: unset; }
-    .toolbar-actions { justify-content: space-between; }
-
-    .vista-cards {
-        grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-        gap: 10px;
+    /* ── Panel filtros en tablet/móvil: fondo sólido, sin blur ── */
+    .panel-filtros {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgb(8, 18, 42);
+    }
+    .panel-filtros.panel-open {
+        animation: panelDown 0.24s cubic-bezier(0.34, 1.1, 0.64, 1) forwards;
+    }
+    .panel-filtros.panel-closing {
+        animation: panelUp 0.18s ease forwards;
     }
 
-    .card-title { font-size: 0.88rem; }
+    /* Overlay oscuro detrás del drawer */
+   
+}
+
+@keyframes panelDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes panelUp {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-10px); }
+}
+@keyframes drawerUp {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+@keyframes drawerDown {
+    from { transform: translateY(0); }
+    to   { transform: translateY(100%); }
+}
+
+/* ── Móvil (≤ 640px) ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+    /* Quitar blur en todos los elementos glass para evitar texto borroso */
+    .site-header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgb(5, 11, 25);
+    }
+    .sticky-controls {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgb(5, 11, 25);
+    }
+
+    /* ── Header compacto ── */
+    .site-header { padding: 0 14px; }
+    .header-inner {
+        padding: 10px 0;
+        gap: 8px;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .logo-hc { width: 42px; height: 42px; font-size: 1.6rem; letter-spacing: -1px; flex-shrink: 0; }
+    .header-titles h1 { font-size: 1.1rem; }
+    .header-subtitle { font-size: 0.72rem; letter-spacing: 1.5px; }
+    .header-credits { display: none; }
+
+    /* ── Buscador compacto ── */
+    .sticky-controls {
+        padding: 8px 14px 8px;
+        margin-left: -14px;
+        margin-right: -14px;
+    }
+    .toolbar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin-bottom: 0;
+    }
+    .search-wrapper { min-width: 0; flex: 1; }
+    .toolbar-actions { flex-shrink: 0; gap: 6px; }
+
+    /* Botones solo icono */
+    .btn-tool .btn-tool-label { display: none; }
+    .btn-tool { padding: 10px 12px; gap: 0; }
+
+    /* Drawer en móvil: limitar altura respetando el notch de iOS */
+    .panel-filtros {
+        max-height: calc(100dvh - var(--sticky-controls-h, 56px));
+        padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+
+    .filtros-grid { grid-template-columns: 1fr 1fr; }
+
+    /* ── Modal → hoja inferior ── */
+    .modal-panel {
+        width: 100%;
+        max-height: 95vh;
+        border-radius: 20px 20px 0 0;
+        margin-top: auto;
+    }
+    .modal-overlay { align-items: flex-end; padding: 0; }
+
+    /* ── Tabla: ocultar columnas menos importantes ── */
+    .td-img, th:nth-child(1)  { display: none; }
+    th:nth-child(6), td:nth-child(6),
+    th:nth-child(9), td:nth-child(9) { display: none; }
+    th, td { font-size: 0.76rem; padding: 7px 6px; }
+
+    /* ── Cards ── */
+    .vista-cards {
+        grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+        gap: 10px;
+    }
+    .card-title { font-size: 0.85rem; }
     .card-body  { padding: 8px 10px; }
 
-    .filtros-grid { grid-template-columns: 1fr; }
-
-    th, td { font-size: 0.78rem; padding: 8px 7px; }
+    .container { padding: 12px 14px; }
 }
 
 @media (max-width: 400px) {
     .vista-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .logo-hc { width: 54px; height: 54px; font-size: 2.2rem; }
-    .header-titles h1 { font-size: 1.2rem; }
+    .filtros-grid { grid-template-columns: 1fr; }
 }
 
