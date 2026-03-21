@@ -1,0 +1,4 @@
+# Clave API — NUNCA subir al repositorio
+.env
+node_modules/
+package-lock.json

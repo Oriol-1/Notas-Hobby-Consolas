@@ -4,54 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notas Hobby Consolas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Notas Hobby Consolas 1991 - 1996</h1>
-		
-		<div class="creditos-autor">
-            <p>Web site creado por <strong>Señor Mayor</strong> | 
-               <a href="https://twitter.com/senyor_mayor" target="_blank" rel="noopener noreferrer">X (Twitter)</a> - 
-               <a href="https://www.youtube.com/@senormayorYT" target="_blank" rel="noopener noreferrer">YouTube</a>
-            </p>
-            <p class="texto-legal">
-                <em>Este sitio web es únicamente para fines de consulta. No poseo los derechos de autor de las revistas ni de los juegos mostrados.</em>
-            </p>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logo">
+                <span class="logo-hc">HC</span>
+                <div class="header-titles">
+                    <h1>Notas Hobby Consolas</h1>
+                    <p class="header-subtitle">Base de datos 1991 – 1996</p>
+                </div>
+            </div>
+            <div class="header-credits">
+                <p>Creado por <strong>Señor Mayor</strong></p>
+                <div class="header-links">
+                    <a href="https://twitter.com/senyor_mayor" target="_blank" rel="noopener noreferrer" class="btn-social btn-twitter">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.735-8.835L1.254 2.25H8.08l4.261 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+                        X / Twitter
+                    </a>
+                    <a href="https://www.youtube.com/@senormayorYT" target="_blank" rel="noopener noreferrer" class="btn-social btn-youtube">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        YouTube
+                    </a>
+                </div>
+                <p class="texto-legal">Este sitio es solo para consulta. No poseo los derechos de las revistas ni los juegos mostrados.</p>
+            </div>
         </div>
-        
-        <div class="search-container">
-			<input type="text" id="search-input" placeholder="Buscar juego, consola, desarrollador...">
-				<button id="search-button">Buscar</button>
-				<button id="reset-button">Reiniciar</button>
-		</div>
+    </header>
 
-        <p>
-  			<font color="white">
-    			<strong><span id="contador-juegos">0</span></strong>
-  			</font>
-		</p>
+    <main class="container">
 
-        <div class="table-container">
+        <!-- BARRA DE CONTROLES -->
+        <div class="toolbar">
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <input type="text" id="search-input" placeholder="Buscar juego, consola, desarrollador...">
+                <button id="reset-button" class="btn-clear" title="Limpiar búsqueda" aria-label="Limpiar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="toolbar-actions">
+                <button id="btn-filtros" class="btn-tool" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+                    Filtros
+                    <span id="filtros-badge" class="badge-count" hidden>0</span>
+                </button>
+                <div class="view-toggle" role="group" aria-label="Cambiar vista">
+                    <button id="btn-vista-cards" class="btn-view active" title="Vista tarjetas" aria-pressed="true">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 3h7v7H3zm0 11h7v7H3zm11-11h7v7h-7zm0 11h7v7h-7z"/></svg>
+                    </button>
+                    <button id="btn-vista-tabla" class="btn-view" title="Vista tabla" aria-pressed="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BARRA RÁPIDA DE PLATAFORMAS -->
+        <div id="barra-plataformas" class="barra-plataformas" hidden></div>
+
+        <!-- FILTROS ACTIVOS -->
+        <div id="filtros-activos" class="filtros-activos" hidden></div>
+
+        <!-- PANEL DE FILTROS -->
+        <div id="panel-filtros" class="panel-filtros" hidden>
+            <div class="filtros-grid">
+                <div class="filtro-grupo">
+                    <h3 class="filtro-label">
+                        Consola
+                        <span id="grupo-badge-consola" class="grupo-badge" hidden>0</span>
+                    </h3>
+                    <div id="chips-consola" class="chips-container"></div>
+                </div>
+                <div class="filtro-grupo">
+                    <h3 class="filtro-label">
+                        Marca
+                        <span id="grupo-badge-marca" class="grupo-badge" hidden>0</span>
+                    </h3>
+                    <div id="chips-marca" class="chips-container"></div>
+                </div>
+                <div class="filtro-grupo">
+                    <h3 class="filtro-label">
+                        Año
+                        <span id="grupo-badge-anio" class="grupo-badge" hidden>0</span>
+                    </h3>
+                    <div id="chips-anio" class="chips-container"></div>
+                </div>
+                <div class="filtro-grupo filtro-nota">
+                    <h3 class="filtro-label">Nota mínima <span id="nota-min-label" class="nota-val-badge">0</span></h3>
+                    <div class="nota-slider-container">
+                        <div class="nota-gradient-bar" aria-hidden="true"></div>
+                        <input type="range" id="slider-nota" min="0" max="100" value="0" step="1" class="slider-nota">
+                        <div class="nota-marks" aria-hidden="true">
+                            <span>0</span><span>60</span><span>70</span><span>80</span><span>90</span><span>100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="btn-limpiar-filtros" class="btn-limpiar">Limpiar todos los filtros</button>
+        </div>
+
+        <!-- CONTADORES -->
+        <div class="resultados-bar">
+            <span id="contador-juegos" class="contador-texto">0 juegos</span>
+        </div>
+
+        <!-- ESTADO VACÍO -->
+        <div id="estado-vacio" class="estado-vacio" hidden>
+            <svg viewBox="0 0 64 64" fill="none" width="80" height="80"><circle cx="32" cy="32" r="30" stroke="#003f88" stroke-width="2" opacity="0.3"/><path d="M20 24l12 8 12-8" stroke="#003f88" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="22" r="2" fill="#f5c518"/><circle cx="40" cy="22" r="2" fill="#f5c518"/><path d="M24 40s2 4 8 4 8-4 8-4" stroke="#d32f2f" stroke-width="2" stroke-linecap="round"/></svg>
+            <h2>Sin resultados</h2>
+            <p>No se encontraron juegos con los filtros actuales.</p>
+            <button id="btn-reset-vacio" class="btn-primary">Ver todos los juegos</button>
+        </div>
+
+        <!-- VISTA TARJETAS -->
+        <div id="vista-cards" class="vista-cards"></div>
+
+        <!-- VISTA TABLA -->
+        <div id="vista-tabla" class="table-container" hidden>
             <table id="tabla-juegos">
                 <thead>
                     <tr>
-                        <th data-column="Juego">Juego</th>
-                        <th data-column="Consola">Consola</th>
-                        <th data-column="Marca consola">Marca consola</th>
-                        <th data-column="Desarrollador">Desarrollador</th>
-                        <th data-column="Número">Número</th>
-                        <th data-column="Mes">Mes</th>
-                        <th data-column="Año">Año</th>
-                        <th data-column="Pag">Página</th>
-                        <th data-column="Nota" class="col-nota">Nota</th>
+                        <th class="col-img"></th>
+                        <th data-column="Juego">Juego <span class="sort-icon"></span></th>
+                        <th data-column="Consola">Consola <span class="sort-icon"></span></th>
+                        <th data-column="Marca consola">Marca <span class="sort-icon"></span></th>
+                        <th data-column="Desarrollador">Desarrollador <span class="sort-icon"></span></th>
+                        <th data-column="Número">Nº <span class="sort-icon"></span></th>
+                        <th data-column="Mes">Mes <span class="sort-icon"></span></th>
+                        <th data-column="Año">Año <span class="sort-icon"></span></th>
+                        <th data-column="Pag">Pág. <span class="sort-icon"></span></th>
+                        <th data-column="Nota" class="col-nota">Nota <span class="sort-icon"></span></th>
                     </tr>
                 </thead>
-                <tbody>
-                    </tbody>
+                <tbody></tbody>
             </table>
         </div>
+
+    </main>
+
+    <!-- ── MODAL DETALLE DE JUEGO ──────────────────────────────── -->
+    <div id="modal-juego" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <div class="modal-panel">
+            <button class="modal-close" id="modal-close" aria-label="Cerrar">&#x2715;</button>
+            <div id="modal-cover" class="modal-cover"></div>
+            <div class="modal-body">
+                <div class="modal-header-meta">
+                    <span id="modal-badge-consola" class="card-badge-consola"></span>
+                    <span id="modal-badge-nota" class="badge-nota"></span>
+                </div>
+                <h2 id="modal-titulo" class="modal-titulo"></h2>
+                <div id="modal-detalles" class="modal-detalles"></div>
+                <p id="modal-descripcion" class="modal-descripcion"></p>
+                <a id="modal-youtube" class="btn-youtube-modal" target="_blank" rel="noopener noreferrer">
+                    &#9654; Ver gameplay en YouTube
+                </a>
+            </div>
+        </div>
     </div>
+
+    <footer class="site-footer">
+        <p>Notas Hobby Consolas 1991–1996 · Creado por <strong>Señor Mayor</strong> · Solo fines de consulta</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
