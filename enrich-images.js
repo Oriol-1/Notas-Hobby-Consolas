@@ -37,6 +37,30 @@ if (!RAWG_KEY) {
 const DATOS_PATH = path.join(__dirname, "datos.json");
 const DELAY_MS = 400;
 
+// IDs de plataforma en RAWG.io
+// https://api.rawg.io/api/platforms?key=...
+const RAWG_PLATFORMS = {
+    "Mega Drive":      "3",
+    "Master System":   "167",
+    "Game Gear":       "35",
+    "Game Boy":        "9",
+    "Super Nintendo":  "10",
+    "NES":             "8",
+    "Nintendo":        "8",
+    "Neo Geo":         "12",
+    "Neo Geo CD":      "12",
+    "Saturn":          "59",
+    "PlayStation":     "187",
+    "3DO":             "82",
+    "Jaguar":          "28",
+    "Lynx":            "46",
+    "Turbo Grafx":     "44",
+    "Mega CD":         "3",
+    "Mega CD 32X":     "3",
+    "Mega Drive 32X":  "3",
+    "CD-i":            "",
+};
+
 function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -65,18 +89,58 @@ function httpsGet(url) {
     });
 }
 
-async function fetchFromRAWG(nombre, consola) {
-    // Busca primero con consola para mayor precisión, luego solo nombre
-    const query = encodeURIComponent(nombre);
-    const url = `https://api.rawg.io/api/games?search=${query}&page_size=3&key=${RAWG_KEY}`;
-    const res = await httpsGet(url);
-    if (!res.ok || !res.body?.results?.length) return "";
+// Comprueba si el nombre del juego en RAWG coincide razonablemente con el buscado
+function isNameMatch(rawgName, targetName) {
+    const norm = str => str.toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
+    const a = norm(rawgName);
+    const b = norm(targetName);
+    if (a === b) return true;
+    if (a.includes(b) || b.includes(a)) return true;
+    // Coincidencia de palabras clave (mínimo 4 letras)
+    const words = b.split(" ").filter(w => w.length >= 4);
+    return words.length > 0 && words.every(w => a.includes(w));
+}
 
-    // Intenta encontrar el más relevante: el que tenga imagen
-    for (const game of res.body.results) {
-        if (game.background_image) return game.background_image;
-    }
+// Devuelve la mejor imagen de un array de resultados RAWG priorizando /games/ sobre /screenshots/
+function bestImage(results, nombreBuscado) {
+    // 1. Coincidencia exacta de nombre con URL de portada
+    for (const g of results)
+        if (g.background_image?.includes("/games/") && isNameMatch(g.name, nombreBuscado))
+            return g.background_image;
+    // 2. Coincidencia exacta de nombre con cualquier URL
+    for (const g of results)
+        if (g.background_image && isNameMatch(g.name, nombreBuscado))
+            return g.background_image;
+    // 3. Primera URL de portada sin validar nombre
+    for (const g of results)
+        if (g.background_image?.includes("/games/"))
+            return g.background_image;
+    // 4. Cualquier imagen disponible
+    for (const g of results)
+        if (g.background_image) return g.background_image;
     return "";
+}
+
+async function fetchFromRAWG(nombre, consola) {
+    const query = encodeURIComponent(nombre);
+    const platformId = RAWG_PLATFORMS[consola] || "";
+
+    // Intento 1: buscar con filtro de plataforma
+    if (platformId) {
+        const url = `https://api.rawg.io/api/games?search=${query}&platforms=${platformId}&page_size=5&key=${RAWG_KEY}`;
+        const res = await httpsGet(url);
+        if (res.ok && res.body?.results?.length) {
+            const img = bestImage(res.body.results, nombre);
+            if (img) return img;
+        }
+        await sleep(150);
+    }
+
+    // Intento 2: búsqueda global sin filtro de plataforma (con validación de nombre)
+    const urlGlobal = `https://api.rawg.io/api/games?search=${query}&page_size=5&key=${RAWG_KEY}`;
+    const resGlobal = await httpsGet(urlGlobal);
+    if (!resGlobal.ok || !resGlobal.body?.results?.length) return "";
+    return bestImage(resGlobal.body.results, nombre);
 }
 
 async function fetchFromWikipedia(nombre) {
@@ -100,9 +164,10 @@ async function main() {
         const juego = datos[i];
         const nombre = juego["Juego"];
 
-        // Si ya tiene imagen válida, saltar
-        if (juego.imagen && juego.imagen.startsWith("http")) {
-            process.stdout.write(`[${i + 1}/${total}] ✅ Ya tiene imagen: ${nombre}\n`);
+        // Saltar solo si ya tiene una portada correcta (/games/)
+        // Las URLs /screenshots/ se reprocesarán para buscar una portada mejor
+        if (juego.imagen && juego.imagen.includes("/games/")) {
+            process.stdout.write(`[${i + 1}/${total}] ✅ Ya tiene portada: ${nombre}\n`);
             continue;
         }
 
