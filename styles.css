@@ -818,6 +818,41 @@ td.td-juego { color: #a8c4f0; font-weight: 500; }
 td.td-nota { text-align: center; }
 
 /* ── FOOTER ────────────────────────────────────────────────────── */
+/* ── BOTÓN SCROLL TO TOP ──────────────────────────────────────── */
+.btn-scroll-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 900;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(245,197,24,0.25);
+    background: var(--hc-surface-2);
+    color: var(--hc-yellow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+    pointer-events: none;
+}
+.btn-scroll-top:not([hidden]) {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.btn-scroll-top:hover {
+    background: var(--hc-surface);
+    border-color: rgba(245,197,24,0.55);
+}
+@media (max-width: 480px) {
+    .btn-scroll-top { bottom: 18px; right: 16px; width: 42px; height: 42px; }
+}
+
 .site-footer {
     text-align: center;
     padding: 24px 20px;

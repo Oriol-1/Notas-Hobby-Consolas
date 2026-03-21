@@ -11,9 +11,9 @@ Aplicación web estática que permite consultar, filtrar y explorar las notas de
 3. [Ejecutar el proyecto en local](#3-ejecutar-el-proyecto-en-local)
 4. [Estructura de archivos](#4-estructura-de-archivos)
 5. [Rellenar la información que falta en datos.json](#5-rellenar-la-información-que-falta-en-datosjson)
-   - [5.1 Imágenes de portada](#51-imágenes-de-portada-enrich-imagesjs)
-   - [5.2 Descripciones](#52-descripciones-enrich-descriptionsjs)
-   - [5.3 Orden recomendado](#53-orden-recomendado)
+   - [Punto de partida](#cuál-es-el-punto-de-partida)
+   - [¿Qué script hace qué?](#qué-script-hace-qué)
+   - [Paso a paso desde cero](#paso-a-paso-desde-cero)
 6. [Estructura de datos.json](#6-estructura-de-datosjson)
 7. [Variables de entorno (.env)](#7-variables-de-entorno-env)
    - [7.1 Obtener la clave RAWG](#71-obtener-la-clave-rawg)
@@ -86,7 +86,7 @@ npx serve .
 
 La primera vez que lo ejecutes, npm descargará automáticamente el paquete `serve` (no necesitas instalarlo manualmente). Verás una salida similar a esta:
 
-```
+```text
    ┌──────────────────────────────────────────┐
    │                                          │
    │   Serving!                               │
@@ -128,81 +128,122 @@ notashobby/
 
 ## 5. Rellenar la información que falta en datos.json
 
-`datos.json` es el corazón de la aplicación. Cada juego tiene hasta **12 campos**. Los que pueden estar vacíos son `imagen`, `imagen_wiki` y `descripcion`. Los scripts de enriquecimiento los rellenan automáticamente consultando APIs públicas.
+### ¿Cuál es el punto de partida?
 
-### 5.1 Imágenes de portada (`enrich-images.js`)
+Cuando recibes el archivo `datos.json` por primera vez, cada juego solo tiene los datos extraídos de la revista: nombre, consola, nota, número de revista, mes, año y página. Los tres campos visuales están vacíos:
 
-**Qué hace:**
+```json
+{
+  "Juego":         "Street Fighter II",
+  "Consola":       "Super Nintendo",
+  "Marca consola": "Nintendo",
+  "Desarrollador": "Capcom",
+  "Nota":          "96",
+  "Número":        "15",
+  "Mes":           "Diciembre",
+  "Año":           "1992",
+  "Pag":           "48",
+  "imagen":        "",
+  "imagen_wiki":   "",
+  "descripcion":   ""
+}
+```
 
-- Consulta la API de [RAWG.io](https://rawg.io/apidocs) para obtener la portada oficial del juego → campo `imagen`
-- Si RAWG no encuentra nada, consulta Wikipedia en inglés → campo `imagen_wiki`
-- Salta los juegos que ya tienen imagen (reanudable si se interrumpe)
-- Guarda progresivamente cada 20 juegos para no perder datos
+Los campos `imagen`, `imagen_wiki` y `descripcion` están vacíos. Los dos scripts de enriquecimiento se encargan de rellenarlos automáticamente consultando APIs públicas.
 
-**Requisito previo:** tener la clave `RAWG_API_KEY` en el archivo `.env`
+---
+
+### ¿Qué script hace qué?
+
+| Script | Rellena | Fuente de datos | Necesita API key |
+| --- | --- | --- | --- |
+| `enrich-images.js` | `imagen` y `imagen_wiki` | RAWG.io + Wikipedia EN | ✅ Sí (`RAWG_API_KEY`) |
+| `enrich-descriptions.js` | `descripcion` | Wikipedia ES + Wikipedia EN | ❌ No |
+
+---
+
+### Paso a paso desde cero
+
+#### Paso previo: configurar la clave de RAWG (solo para imágenes)
+
+Antes de ejecutar el script de imágenes necesitas una clave gratuita de RAWG.io:
+
+1. Regístrate en <https://rawg.io/apidocs>
+2. Copia tu clave personal
+3. Crea el archivo `.env` en la raíz del proyecto con este contenido:
+
+```text
+RAWG_API_KEY=tu_clave_aqui
+```
+
+> Sin este archivo el script de imágenes fallará. El de descripciones no lo necesita.
+
+---
+
+#### Paso 1: rellenar imágenes de portada
 
 ```powershell
 # Desde la carpeta del proyecto
 node enrich-images.js
 ```
 
-**Tiempo estimado:** ~7–10 minutos para ~1000 juegos (delay de 400 ms entre llamadas para respetar los límites de la API)
+**Qué hace internamente:**
 
-**Resultado en datos.json:**
+1. Lee `datos.json` y busca todos los juegos con `imagen` vacío
+2. Para cada juego, consulta la API de RAWG.io con el nombre del juego → guarda la URL en el campo `imagen`
+3. Si RAWG no encuentra nada, busca en Wikipedia en inglés → guarda la URL en `imagen_wiki`
+4. Cada 20 juegos guardados, escribe el progreso en `datos.json` (así no pierdes datos si lo interrumpes)
+5. Al terminar, todos los juegos tienen imagen (o se ha dejado vacío si realmente no existe en ninguna fuente)
 
-```json
-{
-  "imagen":       "https://media.rawg.io/media/games/xxx.jpg",
-  "imagen_wiki":  "https://upload.wikimedia.org/wikipedia/xxx.jpg"
-}
-```
+**Tiempo estimado:** ~7–10 minutos para ~1000 juegos
 
 ---
 
-### 5.2 Descripciones (`enrich-descriptions.js`)
-
-**Qué hace:**
-
-- Consulta Wikipedia en **español** para obtener un resumen del juego → campo `descripcion`
-- Si Wikipedia ES no tiene el juego, prueba con **Wikipedia en inglés** como fallback
-- Prueba automáticamente con el nombre exacto y con sufijos como "(videojuego)" / "(video game)"
-- Salta los juegos que ya tienen descripción (reanudable si se interrumpe)
-- Guarda progresivamente cada 20 juegos
-
-**No requiere API key** — usa la API REST pública de Wikipedia
+#### Paso 2: rellenar descripciones
 
 ```powershell
 # Desde la carpeta del proyecto
 node enrich-descriptions.js
 ```
 
-**Tiempo estimado:** ~5–8 minutos para ~1000 juegos (delay de 300 ms entre llamadas)
+**Qué hace internamente:**
 
-**Resultado en datos.json:**
+1. Lee `datos.json` y busca todos los juegos con `descripcion` vacía
+2. Para cada juego, busca el artículo en **Wikipedia en español**
+3. Si no existe en español, prueba en **Wikipedia en inglés** como alternativa
+4. En ambos casos prueba variantes del nombre: nombre exacto, nombre + "(videojuego)", nombre + "(video game)"
+5. Guarda el resumen del artículo en el campo `descripcion`
+6. Cada 20 juegos procesados, escribe el progreso en `datos.json`
+7. Si Wikipedia no encuentra el juego, el campo queda como `""` — la app simplemente no muestra descripción en ese caso
 
-```json
-{
-  "descripcion": "Street Fighter II es un videojuego de lucha desarrollado por Capcom..."
-}
-```
-
-Si Wikipedia no encuentra el juego, el campo queda como `""` (cadena vacía) — el modal simplemente no muestra la sección de descripción.
+**Tiempo estimado:** ~5–8 minutos para ~1000 juegos
 
 ---
 
-### 5.3 Orden recomendado
+#### Resultado final en datos.json
 
-Si partes desde cero (datos.json sin imágenes ni descripciones):
+Después de ejecutar los dos scripts, cada juego tendrá todos los campos rellenos:
 
-```powershell
-# Paso 1: rellenar imágenes (necesita .env con RAWG_API_KEY)
-node enrich-images.js
-
-# Paso 2: rellenar descripciones (sin API key)
-node enrich-descriptions.js
+```json
+{
+  "Juego":         "Street Fighter II",
+  "Consola":       "Super Nintendo",
+  "Marca consola": "Nintendo",
+  "Desarrollador": "Capcom",
+  "Nota":          "96",
+  "Número":        "15",
+  "Mes":           "Diciembre",
+  "Año":           "1992",
+  "Pag":           "48",
+  "imagen":        "https://media.rawg.io/media/games/xxx.jpg",
+  "imagen_wiki":   "https://upload.wikimedia.org/wikipedia/xxx.jpg",
+  "descripcion":   "Street Fighter II es un videojuego de lucha desarrollado por Capcom..."
+}
 ```
 
-Ambos scripts son **idempotentes**: si los ejecutas dos veces, solo procesan los juegos que aún no tienen datos. Puedes interrumpirlos y reanudarlos sin perder lo ya guardado.
+---
+
+> **Importante:** ambos scripts son **reanudables**. Si los interrumpes a mitad (con `Ctrl + C`), la próxima vez que los ejecutes continuarán desde donde lo dejaron, saltando los juegos que ya tienen datos. No es necesario empezar desde cero.
 
 ---
 

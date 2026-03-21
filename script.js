@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnLimpiarFiltros = document.getElementById("btn-limpiar-filtros");
     const btnResetVacio   = document.getElementById("btn-reset-vacio");
     const barraPlataformas   = document.getElementById("barra-plataformas");
+    const btnScrollTop        = document.getElementById("btn-scroll-top");
 
     // ── MODAL REFS ───────────────────────────────────────────────
     const modalJuego        = document.getElementById("modal-juego");
@@ -316,6 +317,10 @@ document.addEventListener("DOMContentLoaded", () => {
         renderAll(currentData);
         updateFiltrosActivos();
         updateBarraConteos();
+
+        if (window.scrollY > 0) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     }
     // ── HELPER: RE-APLICAR SORT ACTIVO SOBRE UN ARRAY ───────────────
     function applySortToData(data) {
@@ -867,5 +872,16 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error cargando datos.json:", err);
             contadorTexto.textContent = "Error al cargar los datos";
         });
+
+    // ── BOTÓN SCROLL TO TOP ──────────────────────────────────────
+    window.addEventListener("scroll", () => {
+        if (btnScrollTop) btnScrollTop.hidden = window.scrollY < 300;
+    }, { passive: true });
+
+    if (btnScrollTop) {
+        btnScrollTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
 
 });
