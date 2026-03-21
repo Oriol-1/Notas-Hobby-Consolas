@@ -1,111 +1,140 @@
 # Notas Hobby Consolas 1991–1996
 
-Aplicación web estática que permite consultar, filtrar y explorar las notas de videojuegos publicadas en la revista **Hobby Consolas** entre 1991 y 1996. Cada juego tiene portada, descripción y acceso directo a gameplay en YouTube.
+Aplicación web estática para consultar las notas y análisis de videojuegos publicados en la revista **Hobby Consolas** entre 1991 y 1996. Más de **1 400 juegos** con portada, descripción, puntuación e **inicio directo al gameplay en YouTube**.
+
+---
+
+## ¿Qué contiene?
+
+- **1 492 juegos** extraídos de la revista Hobby Consolas (1991–1996)
+- Portadas de cada juego obtenidas automáticamente desde **Wikipedia** y **RAWG.io**
+- Descripción de cada juego desde **Wikipedia en español / inglés**
+- Filtros por consola, marca, año y puntuación
+- Modal con todos los detalles del análisis original de la revista
+- **Botón "Ver gameplay"** que abre directamente YouTube con una búsqueda `nombre + consola + gameplay`
 
 ---
 
 ## Índice
 
-1. [Requisitos](#1-requisitos)
-2. [Instalación y primer arranque](#2-instalación-y-primer-arranque)
-3. [Ejecutar el proyecto en local](#3-ejecutar-el-proyecto-en-local)
+1. [Ejecutar en local](#1-ejecutar-en-local)
+2. [Cómo encuentra las imágenes de portada](#2-cómo-encuentra-las-imágenes-de-portada)
+3. [Cómo redirige al video de gameplay](#3-cómo-redirige-al-video-de-gameplay)
 4. [Estructura de archivos](#4-estructura-de-archivos)
-5. [Rellenar la información que falta en datos.json](#5-rellenar-la-información-que-falta-en-datosjson)
-   - [Punto de partida](#cuál-es-el-punto-de-partida)
-   - [¿Qué script hace qué?](#qué-script-hace-qué)
-   - [Paso a paso desde cero](#paso-a-paso-desde-cero)
+5. [Scripts de enriquecimiento](#5-scripts-de-enriquecimiento)
 6. [Estructura de datos.json](#6-estructura-de-datosjson)
 7. [Variables de entorno (.env)](#7-variables-de-entorno-env)
-   - [7.1 Obtener la clave RAWG](#71-obtener-la-clave-rawg)
-   - [7.2 Configurarla en local](#72-configurarla-en-local)
 8. [Subir cambios al repositorio](#8-subir-cambios-al-repositorio)
 9. [Despliegue en Vercel](#9-despliegue-en-vercel)
 
 ---
 
-## 1. Requisitos
+## 1. Ejecutar en local
 
-| Herramienta | Versión mínima | Para qué se usa |
-| --- | --- | --- |
-| [Node.js](https://nodejs.org) | 18 LTS o superior | Scripts de enriquecimiento + servidor local |
-| npm | Incluido con Node.js | Instalar `serve` |
-| Git | Cualquier versión reciente | Control de versiones |
+El proyecto es HTML/CSS/JS puro — no necesita compilación.
 
-Comprueba que lo tienes instalado:
+> **¿Por qué no funciona con doble clic?** La app carga `datos.json` con `fetch()`. Los navegadores bloquean esa petición cuando se abre como `file://`. Necesitas un servidor HTTP local.
 
-```powershell
-node -v
-npm -v
-git --version
-```
+**Requisitos previos:**
 
----
+| Herramienta | Versión mínima |
+| --- | --- |
+| [Node.js](https://nodejs.org) | 18 LTS o superior |
+| Git | Cualquier versión reciente |
 
-## 2. Instalación y primer arranque
+**Pasos:**
 
 ```powershell
 # 1. Clona el repositorio
-git clone https://github.com/bodickerdev/notashobby.git
-cd notashobby
+git clone https://github.com/Oriol-1/Notas-Hobby-Consolas.git
+cd Notas-Hobby-Consolas
 
-# 2. Crea el archivo de variables de entorno
-#    (necesario solo para el script de imágenes)
-New-Item .env
-Add-Content .env "RAWG_API_KEY=tu_clave_aqui"
-```
-
-> La clave RAWG.io es gratuita. Regístrate en <https://rawg.io/apidocs> y copia tu clave personal.
-
----
-
-## 3. Ejecutar el proyecto en local
-
-El proyecto es HTML/CSS/JS puro — no necesita compilación. Sin embargo, **no puedes abrir `index.html` directamente** haciendo doble clic: el navegador bloqueará la carga de `datos.json` por restricciones de seguridad (`CORS` sobre el protocolo `file://`). Necesitas un servidor HTTP local.
-
-### Pasos
-
-**1. Abre una terminal y navega hasta la carpeta del proyecto:**
-
-```powershell
-cd "ruta\a\notashobby"
-```
-
-Por ejemplo, si clonaste el repositorio en el Escritorio:
-
-```powershell
-cd "$HOME\Desktop\notashobby"
-```
-
-> Es **imprescindible** estar dentro de la carpeta `notashobby` antes de ejecutar el servidor.
-
-**2. Lanza el servidor con `npx serve`:**
-
-```powershell
+# 2. Lanza el servidor local
 npx serve .
 ```
 
-La primera vez que lo ejecutes, npm descargará automáticamente el paquete `serve` (no necesitas instalarlo manualmente). Verás una salida similar a esta:
+La primera vez npm descargará `serve` automáticamente. Verás:
 
 ```text
    ┌──────────────────────────────────────────┐
-   │                                          │
    │   Serving!                               │
-   │                                          │
    │   - Local:    http://localhost:3000      │
-   │   - Network:  http://192.168.x.x:3000   │
-   │                                          │
    └──────────────────────────────────────────┘
 ```
 
-**3. Abre el navegador en:**
-
-**<http://localhost:3000>**
-
-Para detener el servidor pulsa `Ctrl + C` en la terminal.
+Abre **<http://localhost:3000>** en el navegador. Para detener: `Ctrl + C`.
 
 ---
 
-> **¿Por qué no funciona con doble clic?** El script usa `fetch('datos.json')` para cargar la base de datos de juegos. Los navegadores bloquean ese tipo de petición cuando la página se abre como archivo local (`file://`). Un servidor local convierte la petición en `http://` y el problema desaparece.
+## 2. Cómo encuentra las imágenes de portada
+
+Cada juego en `datos.json` tiene dos campos de imagen:
+
+| Campo | Fuente | Prioridad |
+| --- | --- | --- |
+| `imagen` | [RAWG.io](https://rawg.io) — portada oficial del juego | 1ª (si existe) |
+| `imagen_wiki` | [Wikipedia](https://en.wikipedia.org) — thumbnail del artículo | 2ª (fallback) |
+
+La app muestra la imagen siguiendo este orden:
+1. Si `imagen` tiene URL → usa esa portada (RAWG)
+2. Si no, si `imagen_wiki` tiene URL → usa la imagen de Wikipedia
+3. Si ambas están vacías → muestra un placeholder con las iniciales del juego y el color de la plataforma
+
+### Cómo se rellenan automáticamente
+
+Tres scripts de Node.js buscan y guardan las imágenes en `datos.json`:
+
+| Script | Qué busca | Estrategia |
+| --- | --- | --- |
+| `enrich-images.js` | Portadas RAWG + Wikipedia | Wikipedia primero (más fiable para retro), RAWG como alternativa |
+| `wiki-only.js` | Solo Wikipedia | Búsqueda directa por nombre + consola |
+| `wiki-smart.js` | Solo Wikipedia (inteligente) | **Alias map** (200+ entradas para títulos españoles/localizados) + OpenSearch con nombre, consola, marca y año |
+
+#### Por qué existe `wiki-smart.js`
+
+Muchos juegos de los 90 tienen títulos localizados en España distintos al nombre inglés de Wikipedia. Por ejemplo:
+
+| Título en la revista | Artículo en Wikipedia |
+| --- | --- |
+| Los Pitufos | The Smurfs (video game) |
+| El Rey León | The Lion King (video game) |
+| Probotector 2 | Contra: The Alien Wars |
+| Super Aleste | Space Megaforce |
+| Mundodisco | Discworld (video game) |
+
+`wiki-smart.js` incluye un **alias map** con más de 200 entradas que traduce el título español/localizado al slug exacto de Wikipedia antes de hacer la búsqueda. Si el alias no basta, usa la **Wikipedia OpenSearch API** con las 4 dimensiones del juego: nombre + consola + marca + año.
+
+#### Ejecutar los scripts (solo si quieres re-enriquecer)
+
+```powershell
+# Requiere RAWG_API_KEY en .env (ver sección 7)
+node enrich-images.js
+
+# Wikipedia pura — no necesita clave
+node wiki-only.js
+node wiki-smart.js
+```
+
+> Los scripts son **reanudables**: si los interrumpes con `Ctrl + C`, la próxima vez continuarán donde lo dejaron.
+
+---
+
+## 3. Cómo redirige al video de gameplay
+
+En el modal de cada juego hay un botón **"Ver gameplay"**. Al hacer clic:
+
+1. La app construye una consulta de búsqueda automáticamente:
+   ```
+   Nombre del juego + Consola + gameplay
+   ```
+   Por ejemplo: `Street Fighter II Super Nintendo gameplay`
+
+2. Abre esa búsqueda directamente en **YouTube**:
+   ```
+   https://www.youtube.com/results?search_query=Street+Fighter+II+Super+Nintendo+gameplay
+   ```
+
+No hay ningún video almacenado — el enlace se genera en tiempo real para cada juego. Así siempre apunta a los videos más recientes disponibles en YouTube.
 
 ---
 
@@ -113,137 +142,48 @@ Para detener el servidor pulsa `Ctrl + C` en la terminal.
 
 ```text
 notashobby/
-├── index.html              → Estructura HTML de la aplicación
-├── styles.css              → Todos los estilos (diseño glassmorphism)
-├── script.js               → Toda la lógica (filtros, vistas, modal)
-├── datos.json              → Base de datos principal (~1000 juegos)
-├── enrich-images.js        → Script Node.js: rellena portadas en datos.json
-├── enrich-descriptions.js  → Script Node.js: rellena descripciones en datos.json
-├── .env                    → Variables de entorno (clave RAWG) — NO subir a git
-├── .gitignore              → Ignora node_modules y .env
-└── images/                 → Carpeta de imágenes locales (si las hubiera)
+├── index.html               → Estructura HTML de la aplicación
+├── styles.css               → Todos los estilos (diseño glassmorphism)
+├── script.js                → Lógica: filtros, vistas, modal, enlace YouTube
+├── datos.json               → Base de datos principal (1 492 juegos)
+├── enrich-images.js         → Script: busca portadas RAWG + Wikipedia
+├── enrich-descriptions.js   → Script: busca descripciones en Wikipedia ES/EN
+├── wiki-only.js             → Script: busca portadas solo en Wikipedia
+├── wiki-smart.js            → Script: búsqueda inteligente con alias map + OpenSearch
+├── fix-duplicates.js        → Script: detecta y elimina URLs duplicadas/incorrectas
+├── .env                     → Clave RAWG (NO subir a git)
+└── .gitignore               → Ignora node_modules y .env
 ```
 
 ---
 
-## 5. Rellenar la información que falta en datos.json
+## 5. Scripts de enriquecimiento
 
-### ¿Cuál es el punto de partida?
+Todos los scripts leen y modifican `datos.json`. Son seguros de interrumpir — guardan el progreso cada 20 juegos.
 
-Cuando recibes el archivo `datos.json` por primera vez, cada juego solo tiene los datos extraídos de la revista: nombre, consola, nota, número de revista, mes, año y página. Los tres campos visuales están vacíos:
-
-```json
-{
-  "Juego":         "Street Fighter II",
-  "Consola":       "Super Nintendo",
-  "Marca consola": "Nintendo",
-  "Desarrollador": "Capcom",
-  "Nota":          "96",
-  "Número":        "15",
-  "Mes":           "Diciembre",
-  "Año":           "1992",
-  "Pag":           "48",
-  "imagen":        "",
-  "imagen_wiki":   "",
-  "descripcion":   ""
-}
-```
-
-Los campos `imagen`, `imagen_wiki` y `descripcion` están vacíos. Los dos scripts de enriquecimiento se encargan de rellenarlos automáticamente consultando APIs públicas.
-
----
-
-### ¿Qué script hace qué?
-
-| Script | Rellena | Fuente de datos | Necesita API key |
+| Script | Rellena | Fuente | Clave API |
 | --- | --- | --- | --- |
-| `enrich-images.js` | `imagen` y `imagen_wiki` | RAWG.io + Wikipedia EN | ✅ Sí (`RAWG_API_KEY`) |
-| `enrich-descriptions.js` | `descripcion` | Wikipedia ES + Wikipedia EN | ❌ No |
+| `enrich-images.js` | `imagen`, `imagen_wiki` | Wikipedia + RAWG.io | ✅ `RAWG_API_KEY` |
+| `wiki-only.js` | `imagen_wiki` | Wikipedia | ❌ No |
+| `wiki-smart.js` | `imagen_wiki` | Wikipedia (con alias map + OpenSearch) | ❌ No |
+| `enrich-descriptions.js` | `descripcion` | Wikipedia ES + EN | ❌ No |
+| `fix-duplicates.js` | Limpia `imagen` | — (limpieza interna) | ❌ No |
 
----
-
-### Paso a paso desde cero
-
-#### Paso previo: configurar la clave de RAWG (solo para imágenes)
-
-Antes de ejecutar el script de imágenes necesitas una clave gratuita de RAWG.io:
-
-1. Regístrate en <https://rawg.io/apidocs>
-2. Copia tu clave personal
-3. Crea el archivo `.env` en la raíz del proyecto con este contenido:
-
-```text
-RAWG_API_KEY=tu_clave_aqui
-```
-
-> Sin este archivo el script de imágenes fallará. El de descripciones no lo necesita.
-
----
-
-#### Paso 1: rellenar imágenes de portada
+### Flujo recomendado desde cero
 
 ```powershell
-# Desde la carpeta del proyecto
+# 1. Portadas principales (necesita .env con RAWG_API_KEY)
 node enrich-images.js
-```
 
-**Qué hace internamente:**
+# 2. Limpiar posibles portadas incorrectas asignadas por RAWG
+node fix-duplicates.js
 
-1. Lee `datos.json` y busca todos los juegos con `imagen` vacío
-2. Para cada juego, consulta la API de RAWG.io con el nombre del juego → guarda la URL en el campo `imagen`
-3. Si RAWG no encuentra nada, busca en Wikipedia en inglés → guarda la URL en `imagen_wiki`
-4. Cada 20 juegos guardados, escribe el progreso en `datos.json` (así no pierdes datos si lo interrumpes)
-5. Al terminar, todos los juegos tienen imagen (o se ha dejado vacío si realmente no existe en ninguna fuente)
+# 3. Recuperar portadas que siguen vacías usando solo Wikipedia
+node wiki-smart.js
 
-**Tiempo estimado:** ~7–10 minutos para ~1000 juegos
-
----
-
-#### Paso 2: rellenar descripciones
-
-```powershell
-# Desde la carpeta del proyecto
+# 4. Descripciones (no necesita clave)
 node enrich-descriptions.js
 ```
-
-**Qué hace internamente:**
-
-1. Lee `datos.json` y busca todos los juegos con `descripcion` vacía
-2. Para cada juego, busca el artículo en **Wikipedia en español**
-3. Si no existe en español, prueba en **Wikipedia en inglés** como alternativa
-4. En ambos casos prueba variantes del nombre: nombre exacto, nombre + "(videojuego)", nombre + "(video game)"
-5. Guarda el resumen del artículo en el campo `descripcion`
-6. Cada 20 juegos procesados, escribe el progreso en `datos.json`
-7. Si Wikipedia no encuentra el juego, el campo queda como `""` — la app simplemente no muestra descripción en ese caso
-
-**Tiempo estimado:** ~5–8 minutos para ~1000 juegos
-
----
-
-#### Resultado final en datos.json
-
-Después de ejecutar los dos scripts, cada juego tendrá todos los campos rellenos:
-
-```json
-{
-  "Juego":         "Street Fighter II",
-  "Consola":       "Super Nintendo",
-  "Marca consola": "Nintendo",
-  "Desarrollador": "Capcom",
-  "Nota":          "96",
-  "Número":        "15",
-  "Mes":           "Diciembre",
-  "Año":           "1992",
-  "Pag":           "48",
-  "imagen":        "https://media.rawg.io/media/games/xxx.jpg",
-  "imagen_wiki":   "https://upload.wikimedia.org/wikipedia/xxx.jpg",
-  "descripcion":   "Street Fighter II es un videojuego de lucha desarrollado por Capcom..."
-}
-```
-
----
-
-> **Importante:** ambos scripts son **reanudables**. Si los interrumpes a mitad (con `Ctrl + C`), la próxima vez que los ejecutes continuarán desde donde lo dejaron, saltando los juegos que ya tienen datos. No es necesario empezar desde cero.
 
 ---
 
@@ -270,18 +210,20 @@ Cada entrada del array tiene esta forma:
 
 | Campo | Tipo | Descripción |
 | --- | --- | --- |
-| `Juego` | string | Nombre del juego tal como aparece en la revista |
-| `Consola` | string | Modelo de consola (ej. "Super Nintendo") |
-| `Marca consola` | string | Fabricante (Nintendo, Sega, etc.) — usado para colores en la UI |
+| `Juego` | string | Nombre tal como aparece en la revista |
+| `Consola` | string | Plataforma (ej. "Super Nintendo", "Mega Drive") |
+| `Marca consola` | string | Fabricante (Nintendo, Sega…) — determina el color en la UI |
 | `Desarrollador` | string | Empresa desarrolladora |
 | `Nota` | string | Puntuación de 0 a 100 |
 | `Número` | string | Número de la revista |
 | `Mes` | string | Mes de publicación |
 | `Año` | string | Año de publicación |
 | `Pag` | string | Página de la revista |
-| `imagen` | string / `""` | URL de portada de RAWG.io |
-| `imagen_wiki` | string / `""` | URL de portada de Wikipedia |
-| `descripcion` | string / `""` | Resumen obtenido de Wikipedia |
+| `imagen` | string / `""` | URL de portada RAWG.io (vacío = no encontrada) |
+| `imagen_wiki` | string / `""` | URL thumbnail Wikipedia (vacío = no encontrada) |
+| `descripcion` | string / `""` | Resumen de Wikipedia (vacío = no encontrada) |
+
+> **Regla de protección:** si `imagen=""` e `imagen_wiki!=""`, esa imagen fue corregida manualmente y los scripts nunca la sobreescriben.
 
 ---
 

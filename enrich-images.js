@@ -395,14 +395,14 @@ async function main() {
         const { imagen, confianza, fallback } = await fetchFromRAWG(nombre, consola, anio, marca);
 
         if (imagen) {
-            juego.imagen      = imagen;
-            juego.imagen_wiki = "";
+            juego.imagen = imagen;
+            // No tocar imagen_wiki — puede tener una imagen de Wikipedia ya encontrada
             rawgHits++;
             process.stdout.write(`✅ RAWG (confianza: ${confianza})\n`);
         } else if (fallback && confianza >= 3) {
             // Fuente 3: captura de RAWG — solo si la coincidencia de nombre es razonable
-            juego.imagen      = fallback;
-            juego.imagen_wiki = "";
+            juego.imagen = fallback;
+            // No tocar imagen_wiki — puede tener una imagen de Wikipedia ya encontrada
             screenshotHits++;
             process.stdout.write(`🖼️  Captura RAWG fallback (confianza: ${confianza})\n`);
         } else {
@@ -410,7 +410,7 @@ async function main() {
             if (juego.imagen && juego.imagen.includes("/screenshots/")) {
                 juego.imagen = "";
             }
-            juego.imagen_wiki = "";
+            // No tocar imagen_wiki — puede tener una imagen de Wikipedia ya encontrada
             noImage++;
             process.stdout.write(`⚠️  Sin imagen (RAWG confianza: ${confianza})\n`);
         }
