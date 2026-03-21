@@ -60,16 +60,52 @@ Add-Content .env "RAWG_API_KEY=tu_clave_aqui"
 
 ## 3. Ejecutar el proyecto en local
 
-El proyecto es HTML/CSS/JS puro — no necesita compilación. Solo hace falta un servidor HTTP local para que el `fetch()` de `datos.json` funcione correctamente.
+El proyecto es HTML/CSS/JS puro — no necesita compilación. Sin embargo, **no puedes abrir `index.html` directamente** haciendo doble clic: el navegador bloqueará la carga de `datos.json` por restricciones de seguridad (`CORS` sobre el protocolo `file://`). Necesitas un servidor HTTP local.
+
+### Pasos
+
+**1. Abre una terminal y navega hasta la carpeta del proyecto:**
 
 ```powershell
-# Desde la carpeta del proyecto
-npx serve . --listen 3000
+cd "ruta\a\notashobby"
 ```
 
-Abre el navegador en: **<http://localhost:3000>**
+Por ejemplo, si clonaste el repositorio en el Escritorio:
 
-> `npx serve` no requiere instalación previa; npm lo descarga automáticamente la primera vez.
+```powershell
+cd "$HOME\Desktop\notashobby"
+```
+
+> Es **imprescindible** estar dentro de la carpeta `notashobby` antes de ejecutar el servidor.
+
+**2. Lanza el servidor con `npx serve`:**
+
+```powershell
+npx serve .
+```
+
+La primera vez que lo ejecutes, npm descargará automáticamente el paquete `serve` (no necesitas instalarlo manualmente). Verás una salida similar a esta:
+
+```
+   ┌──────────────────────────────────────────┐
+   │                                          │
+   │   Serving!                               │
+   │                                          │
+   │   - Local:    http://localhost:3000      │
+   │   - Network:  http://192.168.x.x:3000   │
+   │                                          │
+   └──────────────────────────────────────────┘
+```
+
+**3. Abre el navegador en:**
+
+**<http://localhost:3000>**
+
+Para detener el servidor pulsa `Ctrl + C` en la terminal.
+
+---
+
+> **¿Por qué no funciona con doble clic?** El script usa `fetch('datos.json')` para cargar la base de datos de juegos. Los navegadores bloquean ese tipo de petición cuando la página se abre como archivo local (`file://`). Un servidor local convierte la petición en `http://` y el problema desaparece.
 
 ---
 
