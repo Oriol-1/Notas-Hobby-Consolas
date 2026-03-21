@@ -76,6 +76,7 @@ Cada juego en `datos.json` tiene dos campos de imagen:
 | `imagen_wiki` | [Wikipedia](https://en.wikipedia.org) — thumbnail del artículo | 2ª (fallback) |
 
 La app muestra la imagen siguiendo este orden:
+
 1. Si `imagen` tiene URL → usa esa portada (RAWG)
 2. Si no, si `imagen_wiki` tiene URL → usa la imagen de Wikipedia
 3. Si ambas están vacías → muestra un placeholder con las iniciales del juego y el color de la plataforma
@@ -124,13 +125,16 @@ node wiki-smart.js
 En el modal de cada juego hay un botón **"Ver gameplay"**. Al hacer clic:
 
 1. La app construye una consulta de búsqueda automáticamente:
-   ```
+
+   ```text
    Nombre del juego + Consola + gameplay
    ```
+
    Por ejemplo: `Street Fighter II Super Nintendo gameplay`
 
 2. Abre esa búsqueda directamente en **YouTube**:
-   ```
+
+   ```text
    https://www.youtube.com/results?search_query=Street+Fighter+II+Super+Nintendo+gameplay
    ```
 
