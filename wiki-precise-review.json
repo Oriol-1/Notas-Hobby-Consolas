@@ -1,0 +1,834 @@
+[
+  {
+    "Juego": "Shadow Warriors",
+    "Consola": "NES",
+    "Año": "1991",
+    "puntuacion": 5,
+    "wikiTitle": "Ninja Gaiden (NES video game)",
+    "wikiDescription": "1988 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Ninja_Gaiden_%28NES%29.jpg/250px-Ninja_Gaiden_%28NES%29.jpg",
+    "razones": [
+      "consola \"NES\" en extracto",
+      "año 1991 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "alias:shadow warriors",
+    "aprobado": false
+  },
+  {
+    "Juego": "Will Harvey's Zany Golf",
+    "Consola": "Mega Drive",
+    "Año": "1991",
+    "puntuacion": 6,
+    "wikiTitle": "Zany Golf",
+    "wikiDescription": "1988 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Zany_Golf_Coverart.png/250px-Zany_Golf_Coverart.png",
+    "razones": [
+      "nombre parcial (alguna palabra) en título",
+      "consola \"Mega Drive\" en extracto",
+      "año 1991 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Will Harvey's Zany Golf\" Sega Genesis video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Turbo Racing",
+    "Consola": "NES",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Al Unser Jr.'s Turbo Racing",
+    "wikiDescription": "1989 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/c/c4/Al_Unser_Jr.%27s_Turbo_Racing_Coverart.png",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "consola \"NES\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Turbo Racing\" NES video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Life Force Salamander",
+    "Consola": "NES",
+    "Año": "1992",
+    "puntuacion": 4,
+    "wikiTitle": "Salamander (video game)",
+    "wikiDescription": "1986 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/1/11/Salamander_flyer.png",
+    "razones": [
+      "nombre parcial (alguna palabra) en título",
+      "consola \"NES\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Life Force Salamander\" NES video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "OutRun Europa",
+    "Consola": "Master System",
+    "Año": "1992",
+    "puntuacion": 6,
+    "wikiTitle": "Out Run Europa",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/5/5f/Out_Run_Europa_Cover.jpg",
+    "razones": [
+      "nombre parcial (alguna palabra) en título",
+      "consola \"Master System\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"OutRun Europa\" Master System video game 1992",
+    "aprobado": false
+  },
+  {
+    "Juego": "WWF Wrestlemania Challenge",
+    "Consola": "NES",
+    "Año": "1992",
+    "puntuacion": 4,
+    "wikiTitle": "WWF WrestleMania (1989 video game)",
+    "wikiDescription": "1989 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/5/5b/WWF_NES.PNG",
+    "razones": [
+      "nombre parcial (alguna palabra) en título",
+      "consola \"NES\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"WWF Wrestlemania Challenge\" NES video game 1992",
+    "aprobado": false
+  },
+  {
+    "Juego": "Will Harvey's Zany Golf",
+    "Consola": "Mega Drive",
+    "Año": "1991",
+    "puntuacion": 5,
+    "wikiTitle": "Zany Golf",
+    "wikiDescription": "1988 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Zany_Golf_Coverart.png/250px-Zany_Golf_Coverart.png",
+    "razones": [
+      "consola \"Mega Drive\" en extracto",
+      "año 1991 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Will Harvey's Zany Golf\" Sega Genesis video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Turbo Racing",
+    "Consola": "NES",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Al Unser Jr.'s Turbo Racing",
+    "wikiDescription": "1989 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/c/c4/Al_Unser_Jr.%27s_Turbo_Racing_Coverart.png",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "consola \"NES\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Turbo Racing\" NES video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "OutRun Europa",
+    "Consola": "Master System",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Out Run Europa",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/5/5f/Out_Run_Europa_Cover.jpg",
+    "razones": [
+      "consola \"Master System\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"OutRun Europa\" Master System video game 1992",
+    "aprobado": false
+  },
+  {
+    "Juego": "Will Harvey's Zany Golf",
+    "Consola": "Mega Drive",
+    "Año": "1991",
+    "puntuacion": 5,
+    "wikiTitle": "Zany Golf",
+    "wikiDescription": "1988 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/3/38/Zany_Golf_Coverart.png/250px-Zany_Golf_Coverart.png",
+    "razones": [
+      "consola \"Mega Drive\" en extracto",
+      "año 1991 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Will Harvey's Zany Golf\" Sega Genesis video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Turbo Racing",
+    "Consola": "NES",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Al Unser Jr.'s Turbo Racing",
+    "wikiDescription": "1989 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/c/c4/Al_Unser_Jr.%27s_Turbo_Racing_Coverart.png",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "consola \"NES\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Turbo Racing\" NES video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "OutRun Europa",
+    "Consola": "Master System",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Out Run Europa",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/5/5f/Out_Run_Europa_Cover.jpg",
+    "razones": [
+      "consola \"Master System\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"OutRun Europa\" Master System video game 1992",
+    "aprobado": false
+  },
+  {
+    "Juego": "Tecmo World Cup Soccer",
+    "Consola": "NES",
+    "Año": "1992",
+    "puntuacion": 6,
+    "wikiTitle": "Tecmo Cup Soccer Game",
+    "wikiDescription": "1988 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/2/24/TecmoCupSoccerGame.jpg",
+    "razones": [
+      "nombre parcial (2/3 palabras) en título",
+      "consola \"NES\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Tecmo World Cup Soccer\" NES video game 1992",
+    "aprobado": false
+  },
+  {
+    "Juego": "Joe Montana II: Sports Talk Football",
+    "Consola": "Mega Drive",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Sports Talk Baseball",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/e/e8/SportsTalkBaseballBoxShotGenesis.jpg",
+    "razones": [
+      "consola \"Mega Drive\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Joe Montana II: Sports Talk Football\" Sega Genesis video game 1992",
+    "aprobado": false
+  },
+  {
+    "Juego": "Ax The Battler",
+    "Consola": "Game Gear",
+    "Año": "1992",
+    "puntuacion": 6,
+    "wikiTitle": "Ax Battler: A Legend of Golden Axe",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/e/ea/Axbattler.jpg",
+    "razones": [
+      "nombre parcial (1/1 palabras) en título",
+      "consola \"Game Gear\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:Ax The Battler Game Gear 1992 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Kung Fu Master",
+    "Consola": "Game Boy",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Kung-Fu Master (video game)",
+    "wikiDescription": "1984 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/8/82/KungFuMaster_arcadeflyer.png",
+    "razones": [
+      "nombre exacto en título",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Kung Fu Master\" Game Boy video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "PC Kid 2 (Bonk's Revenge)",
+    "Consola": "Turbo Grafx",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Bonk's Revenge",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/d/d9/Bonk%27s_Revenge_cover.jpg",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:PC Kid 2 (Bonk's Revenge) Turbo Grafx 1992 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Mario & Yoshi",
+    "Consola": "Game Boy",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Yoshi (video game)",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/0/0c/Yoshi_game_cover.png",
+    "razones": [
+      "consola \"Game Boy\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Mario_&_Yoshi",
+    "aprobado": false
+  },
+  {
+    "Juego": "Dragon's Fury",
+    "Consola": "Mega Drive",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Dragon's Revenge",
+    "wikiDescription": "1993 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/8/80/DragonsRevengeJPBoxShotGenesis.jpg",
+    "razones": [
+      "consola \"Mega Drive\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Dragon's Fury\" Sega Genesis video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Sonic 2",
+    "Consola": "Mega Drive",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Sonic the Hedgehog 2",
+    "wikiDescription": "1992 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/0/0c/Sonic_2_US_Cover.jpg",
+    "razones": [
+      "consola \"Mega Drive\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Sonic_2",
+    "aprobado": false
+  },
+  {
+    "Juego": "Batman Returns",
+    "Consola": "Game Gear",
+    "Año": "1992",
+    "puntuacion": 6,
+    "wikiTitle": "Batman Returns",
+    "wikiDescription": "1992 American superhero film",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/8/83/Batman_returns_poster2.jpg",
+    "razones": [
+      "nombre exacto en título",
+      "año 1992 (±1) en artículo"
+    ],
+    "estrategia": "slug:Batman_Returns",
+    "aprobado": false
+  },
+  {
+    "Juego": "Batman Returns",
+    "Consola": "Mega Drive",
+    "Año": "1992",
+    "puntuacion": 6,
+    "wikiTitle": "Batman Returns",
+    "wikiDescription": "1992 American superhero film",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/8/83/Batman_returns_poster2.jpg",
+    "razones": [
+      "nombre exacto en título",
+      "año 1992 (±1) en artículo"
+    ],
+    "estrategia": "slug:Batman_Returns",
+    "aprobado": false
+  },
+  {
+    "Juego": "Sonic 2",
+    "Consola": "Master System",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Sonic the Hedgehog 2 (8-bit video game)",
+    "wikiDescription": "1992 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/9/93/Sonic_the_Hedgehog_2_8-Bit_Coverart.png",
+    "razones": [
+      "consola \"Master System\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Sonic_2_(Master_System)",
+    "aprobado": false
+  },
+  {
+    "Juego": "King of the Monsters 2",
+    "Consola": "Neo Geo",
+    "Año": "1992",
+    "puntuacion": 6,
+    "wikiTitle": "King of the Monsters 2",
+    "wikiDescription": "1992 arcade game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/King_of_the_Monsters_2_arcade_flyer.jpg/250px-King_of_the_Monsters_2_arcade_flyer.jpg",
+    "razones": [
+      "nombre exacto en título",
+      "año 1992 (±1) en artículo"
+    ],
+    "estrategia": "slug:King_of_the_Monsters_2",
+    "aprobado": false
+  },
+  {
+    "Juego": "Shadow Warriors II",
+    "Consola": "NES",
+    "Año": "1992",
+    "puntuacion": 5,
+    "wikiTitle": "Ninja Gaiden II: The Dark Sword of Chaos",
+    "wikiDescription": "1990 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Ninja_Gaiden_II-_The_Dark_Sword_of_Chaos_boxart.jpg/250px-Ninja_Gaiden_II-_The_Dark_Sword_of_Chaos_boxart.jpg",
+    "razones": [
+      "consola \"NES\" en extracto",
+      "año 1992 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Shadow_Warriors_II",
+    "aprobado": false
+  },
+  {
+    "Juego": "Xenon II: Megablast",
+    "Consola": "Game Boy",
+    "Año": "1993",
+    "puntuacion": 5,
+    "wikiTitle": "Xenon 2: Megablast",
+    "wikiDescription": "1989 shoot 'em up video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/d/d8/Xenon_2_Megablast_Amiga_cover.jpg",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "consola \"Game Boy\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Xenon_II:_Megablast",
+    "aprobado": false
+  },
+  {
+    "Juego": "Xenon II: Megablast",
+    "Consola": "Mega Drive",
+    "Año": "1993",
+    "puntuacion": 5,
+    "wikiTitle": "Xenon 2: Megablast",
+    "wikiDescription": "1989 shoot 'em up video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/d/d8/Xenon_2_Megablast_Amiga_cover.jpg",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "consola \"Mega Drive\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Xenon_II:_Megablast",
+    "aprobado": false
+  },
+  {
+    "Juego": "Rolling Thunder 2",
+    "Consola": "Mega Drive",
+    "Año": "1993",
+    "puntuacion": 5,
+    "wikiTitle": "Rolling Thunder 2",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/2/25/Rolling_Thuner_2_game_flyer.png",
+    "razones": [
+      "nombre exacto en título",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Rolling_Thunder_2",
+    "aprobado": false
+  },
+  {
+    "Juego": "Sonic 2",
+    "Consola": "Game Gear",
+    "Año": "1993",
+    "puntuacion": 4,
+    "wikiTitle": "Sonic Origins",
+    "wikiDescription": "2022 video game compilation",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/d/d4/Sonic_Origins_official_art.jpg",
+    "razones": [
+      "nombre parcial (1/1 palabras) en título",
+      "año 1993 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Sonic 2\" Game Gear video game 1993",
+    "aprobado": false
+  },
+  {
+    "Juego": "Jack Nicklaus Golf",
+    "Consola": "Game Boy",
+    "Año": "1993",
+    "puntuacion": 4,
+    "wikiTitle": "Jack Nicklaus' Unlimited Golf & Course Design",
+    "wikiDescription": "1990 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/0/00/Jack_Nicklaus%27_Unlimited_Golf_cover.jpg",
+    "razones": [
+      "nombre parcial (3/3 palabras) en título",
+      "año 1993 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Jack Nicklaus Golf\" Game Boy video game 1993",
+    "aprobado": false
+  },
+  {
+    "Juego": "Jack Nicklaus Golf",
+    "Consola": "Super Nintendo",
+    "Año": "1993",
+    "puntuacion": 4,
+    "wikiTitle": "Jack Nicklaus' Unlimited Golf & Course Design",
+    "wikiDescription": "1990 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/0/00/Jack_Nicklaus%27_Unlimited_Golf_cover.jpg",
+    "razones": [
+      "nombre parcial (3/3 palabras) en título",
+      "año 1993 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Jack Nicklaus Golf\" Super Nintendo video game 1993",
+    "aprobado": false
+  },
+  {
+    "Juego": "Slam Masters",
+    "Consola": "Super Nintendo",
+    "Año": "1994",
+    "puntuacion": 4,
+    "wikiTitle": "Saturday Night Slam Masters",
+    "wikiDescription": "1993 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/1/1b/Saturday_Night_Slam_Masters_arcade_flyer_Capcom.jpg",
+    "razones": [
+      "nombre parcial (2/2 palabras) en título",
+      "año 1994 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Slam_Masters",
+    "aprobado": false
+  },
+  {
+    "Juego": "Bubsy 2",
+    "Consola": "Super Nintendo",
+    "Año": "1994",
+    "puntuacion": 5,
+    "wikiTitle": "Bubsy II",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/9/9f/Bubsy_2_cover.png",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "año 1994 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Bubsy_2",
+    "aprobado": false
+  },
+  {
+    "Juego": "Tiny Toons Adventures Acme All Stars",
+    "Consola": "Mega Drive",
+    "Año": "1994",
+    "puntuacion": 6,
+    "wikiTitle": "Tiny Toon Adventures: ACME All-Stars",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/0/05/Tiny_Toon_Adventures_-_ACME_All-Stars.jpg",
+    "razones": [
+      "nombre parcial (4/5 palabras) en título",
+      "consola \"Mega Drive\" en extracto",
+      "año 1994 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:Tiny Toons Adventures Acme All Stars Sega Genesis 1994 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Lethal Enforcers 2: Gunfighters",
+    "Consola": "Mega Drive",
+    "Año": "1994",
+    "puntuacion": 4,
+    "wikiTitle": "Lethal Enforcers II: Gun Fighters",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/4/42/Lethal_Enforcers_II_-_Gunfighters_Poster.png",
+    "razones": [
+      "nombre parcial (2/3 palabras) en título",
+      "año 1994 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Lethal Enforcers 2: Gunfighters\" Sega Genesis video game 1994",
+    "aprobado": false
+  },
+  {
+    "Juego": "F-15 Strike Eagle II",
+    "Consola": "Mega Drive",
+    "Año": "1994",
+    "puntuacion": 5,
+    "wikiTitle": "F-15 Strike Eagle II",
+    "wikiDescription": "1989 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/2/24/Box_F15SE_500.jpg",
+    "razones": [
+      "nombre exacto en título",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:F-15_Strike_Eagle_II",
+    "aprobado": false
+  },
+  {
+    "Juego": "Tiny Toons Adventures Wild & Wacky Sports",
+    "Consola": "Super Nintendo",
+    "Año": "1994",
+    "puntuacion": 6,
+    "wikiTitle": "Tiny Toon Adventures: Wacky Sports Challenge",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/c/c5/Tiny_Toon_Adventures_Wacky_Sports_Challenge_box_art.jpg",
+    "razones": [
+      "nombre parcial (4/6 palabras) en título",
+      "consola \"Super Nintendo\" en extracto",
+      "año 1994 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:Tiny Toons Adventures Wild & Wacky Sports Super Nintendo 1994 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Tiny Toons Adventures Wacky Sports",
+    "Consola": "Game Boy",
+    "Año": "1995",
+    "puntuacion": 4,
+    "wikiTitle": "Tiny Toon Adventures: Wacky Sports Challenge",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/c/c5/Tiny_Toon_Adventures_Wacky_Sports_Challenge_box_art.jpg",
+    "razones": [
+      "nombre parcial (4/5 palabras) en título",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:Tiny Toons Adventures Wacky Sports Game Boy 1995 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Rugby World Cup 1995",
+    "Consola": "Mega Drive",
+    "Año": "1995",
+    "puntuacion": 4,
+    "wikiTitle": "1995 Rugby World Cup",
+    "wikiDescription": "Men's rugby union event in South Africa",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/RWC1995logo.svg/120px-RWC1995logo.svg.png",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "año 1995 (±1) en artículo"
+    ],
+    "estrategia": "slug:Rugby_World_Cup_1995",
+    "aprobado": false
+  },
+  {
+    "Juego": "NBA Jam",
+    "Consola": "Mega CD",
+    "Año": "1995",
+    "puntuacion": 5,
+    "wikiTitle": "NBA Jam (1993 video game)",
+    "wikiDescription": "1993 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Nbajam.jpg/120px-Nbajam.jpg",
+    "razones": [
+      "nombre exacto en título",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"NBA Jam\" Mega CD video game 1995",
+    "aprobado": false
+  },
+  {
+    "Juego": "The Lawnmower Man",
+    "Consola": "Mega Drive",
+    "Año": "1995",
+    "puntuacion": 5,
+    "wikiTitle": "The Lawnmower Man (video game)",
+    "wikiDescription": "1993 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/7/76/The_Lawnmover_Man_PC_Cover.jpg",
+    "razones": [
+      "nombre exacto en título",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:The_Lawnmower_Man_(video_game)",
+    "aprobado": false
+  },
+  {
+    "Juego": "The Story of Thor",
+    "Consola": "Mega Drive",
+    "Año": "1995",
+    "puntuacion": 5,
+    "wikiTitle": "Beyond Oasis",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/8/8d/Beyondoasiscover.JPG",
+    "razones": [
+      "consola \"Mega Drive\" en extracto",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:The_Story_of_Thor",
+    "aprobado": false
+  },
+  {
+    "Juego": "Starblade",
+    "Consola": "Mega CD",
+    "Año": "1995",
+    "puntuacion": 5,
+    "wikiTitle": "Starblade",
+    "wikiDescription": "1991 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/StarBlade_flyer.jpg/250px-StarBlade_flyer.jpg",
+    "razones": [
+      "nombre exacto en título",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "slug:Starblade",
+    "aprobado": false
+  },
+  {
+    "Juego": "Super Turrican 2",
+    "Consola": "Super Nintendo",
+    "Año": "1995",
+    "puntuacion": 5,
+    "wikiTitle": "Super Metroid",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Smetroidbox.jpg/330px-Smetroidbox.jpg",
+    "razones": [
+      "consola \"Super Nintendo\" en extracto",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:Super Turrican 2 Super Nintendo 1995 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "MicroMachines 2 Turbo Tournament",
+    "Consola": "Game Gear",
+    "Año": "1995",
+    "puntuacion": 4,
+    "wikiTitle": "Micro Machines 2: Turbo Tournament",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/MicroMachines2Cover.jpg/250px-MicroMachines2Cover.jpg",
+    "razones": [
+      "nombre parcial (2/3 palabras) en título",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:MicroMachines 2 Turbo Tournament Game Gear 1995 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Mighty Morphin Power Rangers The Movie",
+    "Consola": "Game Gear",
+    "Año": "1995",
+    "puntuacion": 6,
+    "wikiTitle": "Mighty Morphin Power Rangers (video game)",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/MMPR_Super_NES.jpg/250px-MMPR_Super_NES.jpg",
+    "razones": [
+      "nombre parcial (4/5 palabras) en título",
+      "consola \"Game Gear\" en extracto",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Mighty Morphin Power Rangers The Movie\" Game Gear video game 1995",
+    "aprobado": false
+  },
+  {
+    "Juego": "FIFA Soccer 96",
+    "Consola": "Super Nintendo",
+    "Año": "1995",
+    "puntuacion": 5,
+    "wikiTitle": "FIFA International Soccer",
+    "wikiDescription": "1993 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/0/03/Fifainternationalsoccer_boxart.jpg",
+    "razones": [
+      "nombre parcial (todas las palabras) en título",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:FIFA Soccer 96 Super Nintendo 1995 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "FIFA 96",
+    "Consola": "Mega Drive",
+    "Año": "1995",
+    "puntuacion": 5,
+    "wikiTitle": "FIFA International Soccer",
+    "wikiDescription": "1993 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/0/03/Fifainternationalsoccer_boxart.jpg",
+    "razones": [
+      "consola \"Mega Drive\" en extracto",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:FIFA 96 Sega Genesis 1995 video game",
+    "aprobado": false
+  },
+  {
+    "Juego": "Earthworm Jim 2",
+    "Consola": "Super Nintendo",
+    "Año": "1995",
+    "puntuacion": 6,
+    "wikiTitle": "Earthworm Jim (video game)",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/6/6f/Earthworm_Jim_Neutral_Cover.jpg",
+    "razones": [
+      "nombre parcial (1/1 palabras) en título",
+      "consola \"Super Nintendo\" en extracto",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Earthworm Jim 2\" Super Nintendo video game 1995",
+    "aprobado": false
+  },
+  {
+    "Juego": "Earthworm Jim 2",
+    "Consola": "Mega Drive",
+    "Año": "1995",
+    "puntuacion": 6,
+    "wikiTitle": "Earthworm Jim (video game)",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/6/6f/Earthworm_Jim_Neutral_Cover.jpg",
+    "razones": [
+      "nombre parcial (1/1 palabras) en título",
+      "consola \"Mega Drive\" en extracto",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Earthworm Jim 2\" Sega Genesis video game 1995",
+    "aprobado": false
+  },
+  {
+    "Juego": "Mighty Morphin Power Rangers The Movie",
+    "Consola": "Mega Drive",
+    "Año": "1995",
+    "puntuacion": 6,
+    "wikiTitle": "Mighty Morphin Power Rangers (video game)",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/MMPR_Super_NES.jpg/250px-MMPR_Super_NES.jpg",
+    "razones": [
+      "nombre parcial (4/5 palabras) en título",
+      "consola \"Mega Drive\" en extracto",
+      "año 1995 (±1) en artículo",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Mighty Morphin Power Rangers The Movie\" Sega Genesis video game 1995",
+    "aprobado": false
+  },
+  {
+    "Juego": "Power Rangers The Movie",
+    "Consola": "Game Boy",
+    "Año": "1996",
+    "puntuacion": 4,
+    "wikiTitle": "Mighty Morphin Power Rangers (video game)",
+    "wikiDescription": "1994 video game",
+    "urlImagen": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/MMPR_Super_NES.jpg/250px-MMPR_Super_NES.jpg",
+    "razones": [
+      "nombre parcial (2/3 palabras) en título",
+      "consola \"Game Boy\" en extracto",
+      "\"video game\" en descripción"
+    ],
+    "estrategia": "fulltext:\"Power Rangers The Movie\" Game Boy video game",
+    "aprobado": false
+  }
+]
