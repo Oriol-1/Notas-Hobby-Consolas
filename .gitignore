@@ -2,3 +2,12 @@
 .env
 node_modules/
 package-lock.json
+
+# Backup de imágenes descargadas localmente (pueden pesar cientos de MB)
+# Quita estas líneas si quieres incluirlas en el repositorio
+images/*.jpg
+images/*.jpeg
+images/*.png
+images/*.webp
+images/*.gif
+images/manifest.json

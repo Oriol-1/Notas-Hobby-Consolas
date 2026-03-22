@@ -13,7 +13,7 @@
 const fs   = require("fs");
 const path = require("path");
 
-const DATOS_PATH = path.join(__dirname, "datos.json");
+const DATOS_PATH = path.join(__dirname, "..", "datos.json");
 
 function normName(str) {
     return (str || "")

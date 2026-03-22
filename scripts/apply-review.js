@@ -5,10 +5,11 @@
 //   2. Para cada candidato que quieras aceptar, cambia "aprobado": false → "aprobado": true
 //   3. Ejecuta: node apply-review.js
 
-const fs = require('fs');
+const fs   = require('fs');
+const path = require('path');
 
-const DATA_FILE   = 'datos.json';
-const REVIEW_FILE = 'wiki-precise-review.json';
+const DATA_FILE   = path.join(__dirname, '..', 'datos.json');
+const REVIEW_FILE = path.join(__dirname, 'wiki-precise-review.json');
 
 function main() {
   if (!fs.existsSync(REVIEW_FILE)) {

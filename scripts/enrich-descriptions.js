@@ -10,7 +10,7 @@ const fs   = require("fs");
 const path = require("path");
 const https = require("https");
 
-const DATOS_PATH = path.join(__dirname, "datos.json");
+const DATOS_PATH = path.join(__dirname, "..", "datos.json");
 const DELAY_MS   = 300;
 
 function sleep(ms) {

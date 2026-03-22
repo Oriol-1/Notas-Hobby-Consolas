@@ -15,7 +15,7 @@ const https = require("https");
 
 // Cargar .env manualmente (sin dependencias externas)
 function loadEnv() {
-    const envPath = path.join(__dirname, ".env");
+    const envPath = path.join(__dirname, "..", ".env");
     if (!fs.existsSync(envPath)) return;
     const lines = fs.readFileSync(envPath, "utf8").split("\n");
     for (const line of lines) {
@@ -37,7 +37,7 @@ if (!RAWG_KEY) {
     process.exit(1);
 }
 
-const DATOS_PATH = path.join(__dirname, "datos.json");
+const DATOS_PATH = path.join(__dirname, "..", "datos.json");
 const DELAY_MS = 400;
 
 // IDs de plataforma en RAWG.io (https://api.rawg.io/api/platforms?key=...)

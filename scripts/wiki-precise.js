@@ -14,11 +14,12 @@
 //   node wiki-precise.js --test   → procesa solo los primeros 10 (modo prueba)
 
 const fs   = require('fs');
+const path = require('path');
 const https = require('https');
 
-const DATA_FILE    = 'datos.json';
-const REVIEW_FILE  = 'wiki-precise-review.json';
-const LOG_FILE     = 'wiki-precise-log.txt';
+const DATA_FILE    = path.join(__dirname, '..', 'datos.json');
+const REVIEW_FILE  = path.join(__dirname, 'wiki-precise-review.json');
+const LOG_FILE     = path.join(__dirname, 'wiki-precise-log.txt');
 const DELAY_MS     = 750;
 const SAVE_EVERY   = 20;
 const MIN_AUTO     = 7;   // puntos mínimos para aplicar automáticamente

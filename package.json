@@ -3,6 +3,20 @@
   "version": "1.0.0",
   "description": "Notas de hobby sobre consolas y videojuegos (Hobby Consolas 1991-1996)",
   "scripts": {
-    "start": "npx serve . --listen 3000"
+    "start": "npx serve . --listen 3000",
+
+    "find-image":          "node scripts/find-image.js",
+    "set-image":           "node scripts/set-image.js",
+    "download-images":          "node scripts/download-images.js",
+    "populate-local-images":   "node scripts/populate-local-images.js",
+
+    "fix-duplicates":      "node scripts/fix-duplicates.js",
+    "enrich-images":       "node scripts/enrich-images.js",
+    "enrich-descriptions": "node scripts/enrich-descriptions.js",
+    "find-images":         "node scripts/find-images.js",
+    "wiki-smart":          "node scripts/wiki-smart.js",
+    "wiki-precise":        "node scripts/wiki-precise.js",
+    "apply-review":        "node scripts/apply-review.js",
+    "apply-find-review":   "node scripts/apply-find-review.js"
   }
 }

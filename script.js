@@ -128,7 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const inits = getInitials(juego["Juego"]);
         const src1  = juego.imagen       || "";
         const src2  = juego.imagen_wiki  || "";
-        const hasSrc = src1 || src2;
+        const src3  = juego.imagen_local || "";
+        const hasSrc = src1 || src2 || src3;
         const consola = escapeHtml(juego["Consola"] || "");
 
         const badge = `<span class="card-badge-consola" style="background:${plat.bg};">${consola}</span>`;
@@ -138,9 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card-img-wrapper">
                 <div class="card-img-skeleton"></div>
                 <img class="card-img"
-                     src="${escapeHtml(src1 || src2)}"
+                     src="${escapeHtml(src1 || src2 || src3)}"
                      loading="lazy"
                      data-fallback="${src2 && src1 ? escapeHtml(src2) : ""}"
+                     data-fallback2="${src3 && (src1 || src2) ? escapeHtml(src3) : ""}"
                      data-plat-bg="${plat.bg}"
                      data-inits="${escapeHtml(inits)}"
                      data-consola="${consola}"
@@ -199,14 +201,18 @@ document.addEventListener("DOMContentLoaded", () => {
         data.forEach(juego => {
             const plat = getPlatformInfo(juego["Marca consola"]);
             const notaClass = getNotaClass(juego["Nota"]);
-            const hasSrc = juego.imagen || juego.imagen_wiki;
+            const hasSrc = juego.imagen || juego.imagen_wiki || juego.imagen_local;
             const inits  = getInitials(juego["Juego"]);
+            const _s1 = juego.imagen || "";
+            const _s2 = juego.imagen_wiki || "";
+            const _s3 = juego.imagen_local || "";
 
             const imgCell = hasSrc
                 ? `<img class="td-thumb"
-                        src="${escapeHtml(juego.imagen || juego.imagen_wiki)}"
+                        src="${escapeHtml(_s1 || _s2 || _s3)}"
                         loading="lazy"
-                        data-fallback="${juego.imagen_wiki && juego.imagen ? escapeHtml(juego.imagen_wiki) : ""}"
+                        data-fallback="${_s2 && _s1 ? escapeHtml(_s2) : ""}"
+                        data-fallback2="${_s3 && (_s1 || _s2) ? escapeHtml(_s3) : ""}"
                         data-plat-bg="${plat.bg}"
                         data-inits="${escapeHtml(inits)}"
                         alt="${escapeHtml(juego["Juego"])}" style="opacity:0;"
@@ -238,10 +244,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ── HANDLER GLOBAL DE ERROR DE IMAGEN ───────────────────────
     window.handleImgError = function(img) {
-        const fallback = img.dataset.fallback;
+        const fallback  = img.dataset.fallback;
+        const fallback2 = img.dataset.fallback2;
         if (fallback && img.src !== fallback) {
             img.src = fallback;
             img.dataset.fallback = "";
+        } else if (fallback2 && img.src !== fallback2) {
+            img.src = fallback2;
+            img.dataset.fallback2 = "";
         } else {
             // Sustituir por placeholder
             const wrapper = img.closest(".card-img-wrapper, .td-img");

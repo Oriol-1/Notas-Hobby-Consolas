@@ -4,9 +4,10 @@
 // Solo procesa juegos con imagen="" AND imagen_wiki=""
 
 const fs = require('fs');
+const path = require('path');
 const https = require('https');
 
-const DATA_FILE = 'datos.json';
+const DATA_FILE = path.join(__dirname, '..', 'datos.json');
 const DELAY_MS = 700;
 const SAVE_EVERY = 20;
 

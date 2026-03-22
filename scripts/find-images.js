@@ -17,8 +17,9 @@
 
 const https = require('https');
 const fs    = require('fs');
-const PATH  = './datos.json';
-const LOG   = './find-images-log.txt';
+const path  = require('path');
+const PATH  = path.join(__dirname, '..', 'datos.json');
+const LOG   = path.join(__dirname, 'find-images-log.txt');
 
 // ──────────────────────────────────────────────────────────────────────────────
 // CONFIGURACIÓN
@@ -514,7 +515,7 @@ async function main() {
     fs.writeFileSync(PATH, JSON.stringify(datos, null, 2), 'utf8');
   }
   if (!TEST_MODE && review.length > 0) {
-    fs.writeFileSync('./find-images-review.json', JSON.stringify(review, null, 2), 'utf8');
+    fs.writeFileSync(path.join(__dirname, 'find-images-review.json'), JSON.stringify(review, null, 2), 'utf8');
     console.log(`\n→ ${review.length} candidatos para revisión en find-images-review.json`);
   }
 

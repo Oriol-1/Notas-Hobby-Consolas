@@ -7,9 +7,10 @@
  * Para aprobar todos sin preguntar: node apply-find-review.js --all
  * Para ver la lista sin aplicar nada: node apply-find-review.js --list
  */
-const fs = require('fs');
-const PATH    = './datos.json';
-const REVIEW  = './find-images-review.json';
+const fs   = require('fs');
+const path = require('path');
+const PATH    = path.join(__dirname, '..', 'datos.json');
+const REVIEW  = path.join(__dirname, 'find-images-review.json');
 
 if (!fs.existsSync(REVIEW)) {
   console.log('No existe find-images-review.json');
