@@ -1,39 +1,34 @@
-find-images.js — 2026-03-22T14:08:31.692Z
-Modo: COMPLETO | Fuentes: vgdb=true, wiki=true
-Total: 232 | Auto-aplicados: 90 | Para revisar: 46 | Fallidos: 96 | Errores: 0
+find-images.js — 2026-03-22T20:34:05.790Z
+Modo: COMPLETO | Fuentes: vgdb=false, wiki=true
+Total: 140 | Auto-aplicados: 32 | Para revisar: 31 | Fallidos: 77 | Errores: 0
 
-FAIL | James ""Buster"" Douglas Knockout Boxing | Mega Drive
-FAIL | Life Force Salamander | NES
 FAIL | Aeroal Assault | Mega Drive
-AUTO | wiki | pts=6 | Tournament Cyberball | Lynx | Cyberball | https://upload.wikimedia.org/wikipedia/en/1/12/Cyberball_Cover.jpg
-FAIL | Shadow of the Beast | Mega Drive
-REV  | wiki | pts=5 | Tecmo World Cup Soccer | NES | Tecmo Cup Soccer Game | https://upload.wikimedia.org/wikipedia/en/2/24/TecmoCupSoccerGame.jpg
-AUTO | wiki | pts=6 | E-SWAT | Mega Drive | ESWAT: City Under Siege | https://upload.wikimedia.org/wikipedia/en/9/91/E-Swat_box_usa.jpg
+REV  | wiki | pts=4 | Shadow of the Beast | Mega Drive | Shadow of the Beast III | https://upload.wikimedia.org/wikipedia/en/d/d8/Shadow_of_the_beast_3_cover_art.jpg
+AUTO | wiki | pts=7 | Tecmo World Cup Soccer | NES | Tecmo Cup Soccer Game | https://upload.wikimedia.org/wikipedia/en/2/24/TecmoCupSoccerGame.jpg
 FAIL | Joe Montana II: Sports Talk Football | Mega Drive
 FAIL | Solitaire Poker | Game Gear
-FAIL | Championship Rally | NES
-FAIL | The Chessmaster | NES
+AUTO | wiki | pts=8 | Championship Rally | NES | Championship Rally (1991 video game) | https://upload.wikimedia.org/wikipedia/en/c/cc/Championship_Rally_cover_art.jpg
+REV  | wiki | pts=4 | The Chessmaster | NES | The Fidelity Chessmaster 2100 | https://upload.wikimedia.org/wikipedia/en/7/7b/The_Fidelity_Chessmaster_2100_cover.jpg
 FAIL | World Champ | NES
-FAIL | The Chessmaster | Super Nintendo
+REV  | wiki | pts=4 | The Chessmaster | Super Nintendo | The Fidelity Chessmaster 2100 | https://upload.wikimedia.org/wikipedia/en/7/7b/The_Fidelity_Chessmaster_2100_cover.jpg
 FAIL | Wimbledon Championship Tennis | Master System
 FAIL | Dragon's Fury | Mega Drive
-REV  | wiki | pts=4 | Tom and Jerry The Movie | Master System | Tom and Jerry: The Movie | https://upload.wikimedia.org/wikipedia/en/b/b4/Tom_and_Jerry_-_The_Movie_Poster.png
-FAIL | The Aquatic Games Starring James Pond and the Aquabats | Mega Drive
-REV  | wiki | pts=4 | Batman Returns | Game Gear | Batman Returns | https://upload.wikimedia.org/wikipedia/en/8/83/Batman_returns_poster2.jpg
-REV  | wiki | pts=4 | Batman Returns | Mega Drive | Batman Returns | https://upload.wikimedia.org/wikipedia/en/8/83/Batman_returns_poster2.jpg
+AUTO | wiki | pts=7 | Tom and Jerry The Movie | Master System | Tom and Jerry: The Movie (video game) | https://upload.wikimedia.org/wikipedia/en/f/fd/Tom_%26_Jerry_The_Movie_SMS_Cover.jpg
+REV  | wiki | pts=5 | The Aquatic Games Starring James Pond and the Aquabats | Mega Drive | The Aquatic Games | https://upload.wikimedia.org/wikipedia/en/b/b3/AquaticGamesBoxart.jpg
+REV  | wiki | pts=5 | Batman Returns | Game Gear | Batman Returns (Sega video games) | https://upload.wikimedia.org/wikipedia/en/f/f7/BatmanReturnsCoverart.jpg
+REV  | wiki | pts=5 | Batman Returns | Mega Drive | Batman Returns (Sega video games) | https://upload.wikimedia.org/wikipedia/en/f/f7/BatmanReturnsCoverart.jpg
 FAIL | Trivial Pursuit Genus Edition | Master System
-AUTO | wiki | pts=6 | Galaxy 5000: Racing in the 51st Century | NES | Galaxy 5000 | https://upload.wikimedia.org/wikipedia/en/b/b0/Galaxy5000.jpg
 FAIL | Double Dragon 3: The Arcade Game | Game Boy
 REV  | wiki | pts=5 | The Legend of Zelda: A link to the Past | Super Nintendo | The Legend of Zelda: A Link to the Past and Four Swords | https://upload.wikimedia.org/wikipedia/en/8/83/The_Legend_of_Zelda_A_Link_to_the_Past_%26_Four_Swords_Game_Cover.jpg
 REV  | wiki | pts=4 | Hook | NES | Hook | https://upload.wikimedia.org/wikipedia/commons/9/9d/KamAZ-53213_Kranaufbau.jpg
-FAIL | Sonic 2 | Game Gear
+AUTO | wiki | pts=6 | Sonic 2 | Game Gear | Sonic CD | https://upload.wikimedia.org/wikipedia/en/e/e1/Sonic_CD_North_American_cover_art.jpg
 FAIL | Spiderman / X-Men: Arcade's Revenge | Super Nintendo
 FAIL | The Magical Quest Starring Mickey Mouse | Super Nintendo
 FAIL | Universal Soldier | Game Boy
-REV  | wiki | pts=4 | Risky Woods | Mega Drive | Risky Woods | https://upload.wikimedia.org/wikipedia/en/c/c0/Risky_Woods_Cover.jpg
+AUTO | wiki | pts=6 | Risky Woods | Mega Drive | Risky Woods | https://upload.wikimedia.org/wikipedia/en/c/c0/Risky_Woods_Cover.jpg
 FAIL | Nemesis II | Game Boy
 FAIL | Lotus Turbo Challenge | Mega Drive
-REV  | wiki | pts=4 | Hudson Hawk | Game Boy | Hudson Hawk | https://upload.wikimedia.org/wikipedia/en/7/75/Hudson_hawk_ver2.jpg
+REV  | wiki | pts=5 | Hudson Hawk | Game Boy | Hudson Hawk (video game) | https://upload.wikimedia.org/wikipedia/en/c/cb/Hudson_Hawk_-_cover_art_%28NES%29.jpg
 FAIL | Wimbledon 2 | Master System
 FAIL | Grandslam: The Tennis Tournament | Mega Drive
 FAIL | Parason Stars | Game Boy
@@ -42,195 +37,108 @@ FAIL | Phantom Air Mission | NES
 FAIL | Sunset Raiders | Mega Drive
 FAIL | Best of the Best | Game Boy
 FAIL | T2: The Arcade Game (Terminator 2) | Mega Drive
-AUTO | wiki | pts=8 | PGA Tour Golf II | Mega Drive | PGA Tour Golf II | https://upload.wikimedia.org/wikipedia/en/a/aa/PGA_Tour_Golf_II_cover.jpg
 FAIL | The Legend of Prince Valiant | Game Boy
-AUTO | wiki | pts=8 | Solomon's Key 2 | NES | Solomon's Key 2 | https://upload.wikimedia.org/wikipedia/en/5/5b/Solomon%27s_Key_2_cover.jpg
-AUTO | wiki | pts=8 | Rolo to the rescue | Mega Drive | Rolo to the Rescue | https://upload.wikimedia.org/wikipedia/en/7/7b/Rolo_to_the_Rescue_cover.jpg
 FAIL | McDonaldLand | Game Boy
-AUTO | wiki | pts=8 | Krusty's Fun House | Game Boy | Krusty's Fun House | https://upload.wikimedia.org/wikipedia/en/9/96/NES_Krusty%27s_Fun_House.jpg
-AUTO | wiki | pts=7 | Super SWIV | Super Nintendo | Super SWIV | https://upload.wikimedia.org/wikipedia/en/5/55/Super_SWIV_cover.png
-AUTO | wiki | pts=6 | Mario & Yoshi | NES | Yoshi | https://upload.wikimedia.org/wikipedia/en/d/db/Yoshi_%28Nintendo_character%29.png
-FAIL | Jack Nicklaus Golf | Game Boy
-FAIL | Tecmo Cup Soccer | Mega Drive
+REV  | wiki | pts=4 | Jack Nicklaus Golf | Game Boy | Jack Nicklaus' Unlimited Golf & Course Design | https://upload.wikimedia.org/wikipedia/en/0/00/Jack_Nicklaus%27_Unlimited_Golf_cover.jpg
+REV  | wiki | pts=4 | Tecmo Cup Soccer | Mega Drive | Tecmo World Cup '93 | https://upload.wikimedia.org/wikipedia/en/0/0a/Tecmo_World_Cup_%2793.JPG
 FAIL | Another World | Mega Drive
-AUTO | wiki | pts=8 | Sonic Blast Man | Super Nintendo | Sonic Blast Man | https://upload.wikimedia.org/wikipedia/en/b/b4/Sonic_Blast_Man_Poster.png
-AUTO | wiki | pts=6 | Tecmo World Cup | Master System | Tecmo World Cup '93 | https://upload.wikimedia.org/wikipedia/en/0/0a/Tecmo_World_Cup_%2793.JPG
 FAIL | Sega Game Pack 4in1 | Game Gear
-AUTO | wiki | pts=8 | Sega World Tournament Golf | Master System | Sega World Tournament Golf | https://upload.wikimedia.org/wikipedia/en/7/76/Sega_World_Tournament_Golf_cover.jpg
-AUTO | wiki | pts=8 | Tiny Toon Adventures Buster Busts Loose | Super Nintendo | Tiny Toon Adventures: Buster Busts Loose! | https://upload.wikimedia.org/wikipedia/en/5/5d/Buster_Busts_Loose_box_art.jpg
-AUTO | wiki | pts=6 | Bulls vs Blazers | Super Nintendo | Bulls vs. Blazers and the NBA Playoffs | https://upload.wikimedia.org/wikipedia/en/9/9f/Bulls_vs_Blazers.jpg
-REV  | wiki | pts=5 | Jack Nicklaus Golf | Super Nintendo | Jack Nicklaus' Unlimited Golf & Course Design | https://upload.wikimedia.org/wikipedia/en/0/00/Jack_Nicklaus%27_Unlimited_Golf_cover.jpg
-AUTO | wiki | pts=8 | Spider-man Return Of The Sinister Six | Nintendo | Spider-Man: Return of the Sinister Six | https://upload.wikimedia.org/wikipedia/en/a/a1/Spiderman_return_of_the_sinister_six_NES.jpg
+AUTO | wiki | pts=7 | Jack Nicklaus Golf | Super Nintendo | Jack Nicklaus' Unlimited Golf & Course Design | https://upload.wikimedia.org/wikipedia/en/0/00/Jack_Nicklaus%27_Unlimited_Golf_cover.jpg
 FAIL | Summer Challenge | Mega Drive
 REV  | wiki | pts=4 | Strike Gunner S.t.g | Super Nintendo | Strike Gunner S.T.G. | https://upload.wikimedia.org/wikipedia/en/4/46/Strikegunnerstg.jpg
 FAIL | Double Dragon 3: The Arcade Game | Mega Drive
 FAIL | Splatterhouse Iii | Mega Drive
-REV  | wiki | pts=5 | Land Of Illusion | Game Gear | Land of Illusion Starring Mickey Mouse | https://upload.wikimedia.org/wikipedia/en/4/4e/Land_of_Illusion_starring_Mickey_Mouse_Coverart.png
+AUTO | wiki | pts=7 | Land Of Illusion | Game Gear | Land of Illusion Starring Mickey Mouse | https://upload.wikimedia.org/wikipedia/en/4/4e/Land_of_Illusion_starring_Mickey_Mouse_Coverart.png
 FAIL | Ex-ranza | Mega Drive
-AUTO | wiki | pts=8 | Wwf Wrestlemania Steel Cage Challenge | Nintendo | WWF WrestleMania: Steel Cage Challenge | https://upload.wikimedia.org/wikipedia/en/a/a3/Steelcagechallengesega.jpg
-AUTO | wiki | pts=8 | The Sword Of Hope | Game Boy | The Sword of Hope | https://upload.wikimedia.org/wikipedia/en/5/59/The_Sword_of_Hope_Cover.jpeg
 FAIL | Invasion Alienigena | Mega Drive
-AUTO | wiki | pts=8 | Warp Speed | Super Nintendo | WarpSpeed | https://upload.wikimedia.org/wikipedia/en/b/bd/Warpspeed_Coverart.png
-AUTO | wiki | pts=8 | Wwf Wrestlemania Steel Cage Challenge | Master System | WWF WrestleMania: Steel Cage Challenge | https://upload.wikimedia.org/wikipedia/en/a/a3/Steelcagechallengesega.jpg
-AUTO | wiki | pts=8 | Tecmo Super Nba Basketball | Super Nintendo | Tecmo Super NBA Basketball | https://upload.wikimedia.org/wikipedia/en/7/72/Tecmo_Super_NBA_Basketball.jpg
-AUTO | wiki | pts=6 | Chuck Rock 2 Son Of Chuck | Game Gear | Chuck Rock | https://upload.wikimedia.org/wikipedia/en/8/8a/Chuck_Rock_cover_MD.jpg
 FAIL | Jack Nicklaus Power Challenge Golf | Mega Drive
-AUTO | wiki | pts=6 | Ball Jack | Mega Drive | Ball Jacks | https://upload.wikimedia.org/wikipedia/en/3/31/BallJacksBoxShotGenesis.jpg
-AUTO | wiki | pts=6 | Chuck Rock 2 Son Of Chuck | Mega Drive | Chuck Rock | https://upload.wikimedia.org/wikipedia/en/8/8a/Chuck_Rock_cover_MD.jpg
 FAIL | Formula 1 World Championship | Mega Drive
 FAIL | Haunting Polterguy | Mega Drive
 FAIL | Wimbledon | Mega Drive
-FAIL | Street Fighter II Special Champion Edition | Mega Drive
-AUTO | wiki | pts=7 | Super Mario All-stars | Super Nintendo | Super Mario All-Stars | https://upload.wikimedia.org/wikipedia/en/3/3c/Super_Mario_All_Stars_%28game_box_art%29.jpg
-AUTO | wiki | pts=7 | Baby T-rex | Game Boy | Baby T-Rex | https://upload.wikimedia.org/wikipedia/en/f/fc/Baby_T-Rex_cover.jpg
+REV  | wiki | pts=4 | Street Fighter II Special Champion Edition | Mega Drive | Street Fighter II: Champion Edition | https://upload.wikimedia.org/wikipedia/en/f/f5/Street_Fighter_II_Dash_%28flyer%29.png
 FAIL | Battletoads In Ragnarok's World | Game Boy
-REV  | wiki | pts=5 | Robocop Versus Terminator | Mega Drive | RoboCop Versus The Terminator | https://upload.wikimedia.org/wikipedia/en/5/5a/Robocop_versus_Terminator_cover.jpg
+AUTO | wiki | pts=7 | Robocop Versus Terminator | Mega Drive | RoboCop Versus The Terminator | https://upload.wikimedia.org/wikipedia/en/5/5a/Robocop_versus_Terminator_cover.jpg
 FAIL | T.m.h.t. Tournament Fighters | Mega Drive
-AUTO | wiki | pts=7 | Battletoads In Battlemaniacs | Super Nintendo | Battletoads in Battlemaniacs | https://upload.wikimedia.org/wikipedia/en/d/df/Battletoads_in_Battlemaniacs.png
-REV  | wiki | pts=5 | The Legend Of Zelda Link's Awakening | Game Boy | The Legend of Zelda: Link's Awakening (2019 video game) | https://upload.wikimedia.org/wikipedia/en/7/74/The_Legend_of_Zelda_Link%27s_Awakening_%282019_video_game%29.jpg
+AUTO | wiki | pts=7 | The Legend Of Zelda Link's Awakening | Game Boy | The Legend of Zelda: Link's Awakening (2019 video game) | https://upload.wikimedia.org/wikipedia/en/7/74/The_Legend_of_Zelda_Link%27s_Awakening_%282019_video_game%29.jpg
 FAIL | The Ottifants | Mega Drive
-AUTO | wiki | pts=8 | Pop'n Twin Bee | Super Nintendo | Pop'n TwinBee | https://upload.wikimedia.org/wikipedia/en/thumb/2/25/SNES_Pop%27n_TwinBee_cover_art.jpg/330px-SNES_Pop%27n_TwinBee_cover_art.jpg
 FAIL | Lotus Ii | Mega Drive
 FAIL | Felix El Gato | Game Boy
 FAIL | Ottifants | Master System
 FAIL | Ottifants | Game Gear
-AUTO | wiki | pts=8 | Gauntlet Iv | Mega Drive | Gauntlet IV | https://upload.wikimedia.org/wikipedia/en/5/54/Gauntlet_IV_cover.jpeg
 FAIL | Ren And Stimpy | Mega Drive
 REV  | wiki | pts=5 | Indy Heat | Nintendo | Danny Sullivan's Indy Heat | https://upload.wikimedia.org/wikipedia/en/8/86/DannySullivansIndyHeat_arcadeflyer.png
-REV  | wiki | pts=5 | Deep Duck Trouble | Master System | Deep Duck Trouble Starring Donald Duck | https://upload.wikimedia.org/wikipedia/en/2/26/Deep_Duck_Trouble_Starring_Donald_Duck_Coverart.png
-AUTO | wiki | pts=7 | Chuck Rock Ii Son Of Chuck | Mega Cd | Chuck Rock II: Son of Chuck | https://upload.wikimedia.org/wikipedia/en/8/8b/Chuck_Rock_II_Son_of_Chuck_cover.jpg
+AUTO | wiki | pts=7 | Deep Duck Trouble | Master System | Deep Duck Trouble Starring Donald Duck | https://upload.wikimedia.org/wikipedia/en/2/26/Deep_Duck_Trouble_Starring_Donald_Duck_Coverart.png
 REV  | wiki | pts=4 | Dracula | Game Boy | Dracula | https://upload.wikimedia.org/wikipedia/commons/4/45/Dracula_1st_ed_cover_reproduction.jpg
-REV  | wiki | pts=5 | Sonic 3 | Mega Drive | Sonic Spinball | https://upload.wikimedia.org/wikipedia/en/7/71/Sonic_Spinball_box_art.png
-FAIL | Nba Jam | Super Nintendo
+AUTO | wiki | pts=7 | Sonic 3 | Mega Drive | Sonic Spinball | https://upload.wikimedia.org/wikipedia/en/7/71/Sonic_Spinball_box_art.png
+REV  | wiki | pts=5 | Nba Jam | Super Nintendo | NBA Jam (1993 video game) | https://upload.wikimedia.org/wikipedia/en/a/a0/Nbajam.jpg
 FAIL | Micro Machines Challenge | Master System
-AUTO | wiki | pts=8 | Top Gear 2 | Super Nintendo | Top Gear 2 | https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Top_Gear_2_cover.jpg/330px-Top_Gear_2_cover.jpg
-AUTO | wiki | pts=8 | Choplifter Iii | Super Nintendo | Choplifter III | https://upload.wikimedia.org/wikipedia/en/6/6a/Choplifter3sfc.jpg
 REV  | wiki | pts=5 | Art Of Fighting | Mega Drive | Art of Fighting (video game) | https://upload.wikimedia.org/wikipedia/en/5/5d/Art_of_Fighting_arcade_flyer.jpg
-FAIL | Nba Jam | Mega Drive
-REV  | wiki | pts=5 | Body Count | Mega Drive | Body Count (video game) | https://upload.wikimedia.org/wikipedia/en/3/3c/Sega_Mega_Drive_Body_Count_cover_art.jpg
-AUTO | wiki | pts=7 | Blades Of Vengeance | Mega Drive | Blades of Vengeance | https://upload.wikimedia.org/wikipedia/en/b/bd/Blades_of_Vengeance_cover.png
+REV  | wiki | pts=5 | Nba Jam | Mega Drive | NBA Jam (1993 video game) | https://upload.wikimedia.org/wikipedia/en/a/a0/Nbajam.jpg
+AUTO | wiki | pts=7 | Body Count | Mega Drive | Body Count (video game) | https://upload.wikimedia.org/wikipedia/en/3/3c/Sega_Mega_Drive_Body_Count_cover_art.jpg
 REV  | wiki | pts=4 | View Point | Neo Geo | View Point | https://upload.wikimedia.org/wikipedia/commons/8/86/Ant-pen-map-Trinity-Peninsula.PNG
-AUTO | wiki | pts=6 | Nba Showdown | Mega Drive | NBA Showdown (video game) | https://upload.wikimedia.org/wikipedia/en/1/11/NBA_Showdown_Coverart.png
-AUTO | wiki | pts=8 | Kirby's Pinball Land | Game Boy | Kirby's Pinball Land | https://upload.wikimedia.org/wikipedia/en/e/ee/Kirbys-Pinball-Land-Gameboy-Boxart.png
-REV  | wiki | pts=4 | Pink Goes To Hollywood | Mega Drive | Spot Goes To Hollywood | https://upload.wikimedia.org/wikipedia/en/c/ca/Spot_Goes_To_Hollywood.jpg
+AUTO | wiki | pts=6 | Pink Goes To Hollywood | Mega Drive | Spot Goes To Hollywood | https://upload.wikimedia.org/wikipedia/en/c/ca/Spot_Goes_To_Hollywood.jpg
 FAIL | T2 The Arcade Game | Super Nintendo
 FAIL | Hyperdunk | Mega Drive
 FAIL | Barkley Shut Up And Jump | Mega Drive
 FAIL | Tuff'e Nuff | Super Nintendo
-AUTO | wiki | pts=7 | Subterrania | Mega Drive | Sub-Terrania | https://upload.wikimedia.org/wikipedia/en/1/1c/Subterrania.jpg
-AUTO | wiki | pts=7 | Turn And Burn No Fly Zone | Super Nintendo | Turn and Burn: No-Fly Zone | https://upload.wikimedia.org/wikipedia/en/d/d8/Turn_and_Burn_No-Fly_Zone_Cover.jpg
-FAIL | Joe Montana's Nfl Football | Mega Cd
-AUTO | wiki | pts=8 | Bugs Bunny Rabbit Rampage | Super Nintendo | Bugs Bunny Rabbit Rampage | https://upload.wikimedia.org/wikipedia/en/0/0c/Bugs_Bunny_Rabbit_Rampage_Coverart.png
+REV  | wiki | pts=5 | Joe Montana's Nfl Football | Mega Cd | NFL Football '94 Starring Joe Montana | https://upload.wikimedia.org/wikipedia/en/f/f4/NFL_Football_%2794_Starring_Joe_Montana_Cover.jpg
 FAIL | Bubba'n Stix | Mega Drive
 REV  | wiki | pts=5 | Art Of Fighting | Super Nintendo | Art of Fighting (video game) | https://upload.wikimedia.org/wikipedia/en/5/5d/Art_of_Fighting_arcade_flyer.jpg
-AUTO | wiki | pts=6 | Sylvester And Tweety | Mega Drive | Sylvester and Tweety in Cagey Capers | https://upload.wikimedia.org/wikipedia/en/1/13/Sylvester_and_Tweety_in_Cagey_Capers_cover.jpg
-REV  | wiki | pts=5 | Pga European Tour | Mega Drive | PGA Tour Golf | https://upload.wikimedia.org/wikipedia/en/2/24/PGA_Tour_Golf_cover_art.jpg
-AUTO | wiki | pts=6 | Metal Combat | Super Nintendo | Metal Combat: Falcon's Revenge | https://upload.wikimedia.org/wikipedia/en/1/17/SNES_Metal_Combat_-_Falcon%27s_Revenge_cover_art.jpg
-AUTO | wiki | pts=7 | The Flintstones The Treasure Of Sierra Madrock | Super Nintendo | The Flintstones: The Treasure of Sierra Madrock | https://upload.wikimedia.org/wikipedia/en/a/aa/TheFlintstonesSNESBoxArtJP.jpg
-AUTO | wiki | pts=7 | The Simpsons Bart & The Beanstalk | Game Boy | The Simpsons: Bart & the Beanstalk | https://upload.wikimedia.org/wikipedia/en/a/a6/TSBB_front-1-.jpg
+AUTO | wiki | pts=7 | Pga European Tour | Mega Drive | PGA Tour Golf | https://upload.wikimedia.org/wikipedia/en/2/24/PGA_Tour_Golf_cover_art.jpg
 FAIL | Terminator 2 The Judgment Day | Mega Drive
 FAIL | Super Widget | Super Nintendo
-REV  | wiki | pts=5 | Wario Land | Game Boy | Wario Land: Super Mario Land 3 | https://upload.wikimedia.org/wikipedia/en/b/b8/Wario_Land_Super_Mario_Land_3_cover.png
-AUTO | wiki | pts=7 | Pink Goes To Hollywood | Super Nintendo | Pink Goes to Hollywood | https://upload.wikimedia.org/wikipedia/en/f/f9/Pink_Goes_to_Hollywood_cover.jpg
-AUTO | wiki | pts=8 | Pete Sampras Tennis | Mega Drive | Pete Sampras Tennis | https://upload.wikimedia.org/wikipedia/en/e/e6/Pete_Sampras_Tennis_Coverart.png
+AUTO | wiki | pts=7 | Wario Land | Game Boy | Wario Land: Super Mario Land 3 | https://upload.wikimedia.org/wikipedia/en/b/b8/Wario_Land_Super_Mario_Land_3_cover.png
 REV  | wiki | pts=4 | F-1 Pole Position | Game Boy | Pole Position II | https://upload.wikimedia.org/wikipedia/en/7/71/Pole_Position_II_Cover.jpg
-AUTO | wiki | pts=6 | F-1 Pole Position | Super Nintendo | F1 Pole Position (video game) | https://upload.wikimedia.org/wikipedia/en/d/d0/F1_Pole_Position_Cover.jpg
 FAIL | Indiana Jones y la Última Cruzada | NES
 FAIL | Indiana Jones y la Última Cruzada | Game Boy
-AUTO | wiki | pts=6 | Microcosm | Mega CD | Microcosm (video game) | https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Microcosm_AmigaCD32.png/250px-Microcosm_AmigaCD32.png
-AUTO | wiki | pts=7 | Super Troll Islands | Super Nintendo | Super Troll Islands | https://upload.wikimedia.org/wikipedia/en/2/23/SuperTrollIslandsBoxShotSNES.jpg
-AUTO | wiki | pts=7 | Megaman X | Super Nintendo | Mega Man X | https://upload.wikimedia.org/wikipedia/en/5/5f/Mega_Man_X_logo_%28V2%29.png
 FAIL | World Cup Striker | Super Nintendo
-AUTO | wiki | pts=8 | Jimmy Connors Pro Tennis Tour | Super Nintendo | Jimmy Connors Pro Tennis Tour | https://upload.wikimedia.org/wikipedia/en/6/62/Jimmy_Connors_Pro_Tennis_Tour_Coverart.png
-AUTO | wiki | pts=6 | Tetris 2 | Game Boy | Tetris 2 (1993 video game) | https://upload.wikimedia.org/wikipedia/en/0/0a/Tetris_2_NES.jpg
-AUTO | wiki | pts=8 | Jimmy Connors Tennis | NES | Jimmy Connors Tennis | https://upload.wikimedia.org/wikipedia/en/a/a1/JimmyConnorsTennisUSNovember1993NESCoverArtImage.jpg
-AUTO | wiki | pts=8 | Smash Tennis | Super Nintendo | Smash Tennis | https://upload.wikimedia.org/wikipedia/en/thumb/9/93/SNES_Smash_Tennis_cover_art.jpg/330px-SNES_Smash_Tennis_cover_art.jpg
-AUTO | wiki | pts=8 | Tomcat Alley | Mega CD | Tomcat Alley | https://upload.wikimedia.org/wikipedia/en/b/b7/Tomcatalley_mcd.jpg
-AUTO | wiki | pts=8 | Battlecorps | Mega CD | Battlecorps | https://upload.wikimedia.org/wikipedia/en/6/6f/Battlecorps_cover.jpg
-AUTO | wiki | pts=8 | Spiderman and the X-Men in Arcade's Revenge | Mega Drive | Spider-Man and the X-Men in Arcade's Revenge | https://upload.wikimedia.org/wikipedia/en/2/22/Spider-Man_and_the_X-Men_-_Arcade%27s_Revenge_Coverart.png
-AUTO | wiki | pts=8 | Mario Andretti Racing | Mega Drive | Mario Andretti Racing | https://upload.wikimedia.org/wikipedia/en/9/9e/Andretti_Racing_Cover.png
-AUTO | wiki | pts=7 | Combat Cars | Mega Drive | Combat Cars | https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Combat_Cars.jpg/250px-Combat_Cars.jpg
-REV  | wiki | pts=5 | Battletoads and Double Dragon | Super Nintendo | Battletoads/Double Dragon | https://upload.wikimedia.org/wikipedia/en/6/63/BattleToadsDoubleDragon.jpg
-AUTO | wiki | pts=8 | World Cup USA 94 | Mega CD | World Cup USA '94 | https://upload.wikimedia.org/wikipedia/en/5/53/World_Cup_USA_%2794_Coverart.png
+AUTO | wiki | pts=7 | Battletoads and Double Dragon | Super Nintendo | Battletoads/Double Dragon | https://upload.wikimedia.org/wikipedia/en/6/63/BattleToadsDoubleDragon.jpg
 FAIL | F-1 Racing Heavenly Symphony | Mega CD
-AUTO | wiki | pts=8 | Virtual Bart | Super Nintendo | Virtual Bart | https://upload.wikimedia.org/wikipedia/en/c/c4/Virtual_Bart.jpg
-AUTO | wiki | pts=8 | Stunt Race FX | Super Nintendo | Stunt Race FX | https://upload.wikimedia.org/wikipedia/en/6/64/StuntraceSNES_boxart.jpg
-AUTO | wiki | pts=8 | Dynamite Headdy | Mega Drive | Dynamite Headdy | https://upload.wikimedia.org/wikipedia/en/7/78/Dynamite_Headdy_Coverart.png
 FAIL | Los Pitufos | NES
-FAIL | The Misadventures of Flink | Mega Drive
+REV  | wiki | pts=5 | The Misadventures of Flink | Mega Drive | Flink | https://upload.wikimedia.org/wikipedia/en/0/0e/Flink_%28game_box_art%29.jpg
 REV  | wiki | pts=5 | F-1 Pole Position 2 | Super Nintendo | F1 Pole Position (video game) | https://upload.wikimedia.org/wikipedia/en/d/d0/F1_Pole_Position_Cover.jpg
 FAIL | Psychopinball | Mega Drive
 FAIL | Soleil | Mega Drive
 FAIL | Virtua Racing Deluxe | Mega Drive 32X
 REV  | wiki | pts=4 | MicroMachines | Super Nintendo | Micro Machines | https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Camper_Micro_Machines.jpg/500px-Camper_Micro_Machines.jpg
 FAIL | Val d'Isère Championship | Super Nintendo
-REV  | wiki | pts=4 | Rugby World Cup 1995 | Mega Drive | 1995 Rugby World Cup | https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/RWC1995logo.svg/120px-RWC1995logo.svg.png
+AUTO | wiki | pts=6 | Rugby World Cup 1995 | Mega Drive | 1995 Rugby World Cup | https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/RWC1995logo.svg/120px-RWC1995logo.svg.png
 FAIL | Man Overboard | Mega Drive
 FAIL | Dino Dini's Soccer | Super Nintendo
 FAIL | Dino Dini's Soccer | Mega Drive
 FAIL | Super Motocross | Mega Drive 32X
 FAIL | Kick Off 3 European Challenge | Super Nintendo
-AUTO | wiki | pts=8 | Cadillacs and Dinosaurs The Second Cataclysm | Mega CD | Cadillacs and Dinosaurs: The Second Cataclysm | https://upload.wikimedia.org/wikipedia/en/4/46/Cadillacs_and_Dinosaurs.jpg
 REV  | wiki | pts=5 | Wario Blast | Game Boy | Wario | https://upload.wikimedia.org/wikipedia/en/thumb/8/81/Wario.png/250px-Wario.png
 FAIL | B.C. Kid 2 | Game Boy
-AUTO | wiki | pts=8 | Super Turrican 2 | Super Nintendo | Super Turrican 2 | https://upload.wikimedia.org/wikipedia/en/d/db/SNES_Super_Turrican_2_cover_art.png
-AUTO | wiki | pts=6 | Star Trek Starfleet Academy | Super Nintendo | Star Trek: Starfleet Academy – Starship Bridge Simulator | https://upload.wikimedia.org/wikipedia/en/1/1f/Star_Trek_Starfleet_Cover.jpg
-AUTO | wiki | pts=7 | Shining Force CD | Mega CD | Shining Force CD | https://upload.wikimedia.org/wikipedia/en/f/f5/Shining_Force_CD.jpg
 FAIL | Skeleton Krew | Mega Drive
-AUTO | wiki | pts=8 | Super Columns | Game Gear | Super Columns | https://upload.wikimedia.org/wikipedia/en/2/23/SuperColumns.jpg
-AUTO | wiki | pts=8 | Alien Soldier | Mega Drive | Alien Soldier | https://upload.wikimedia.org/wikipedia/en/e/ec/Alien_Soldier_Coverart.png
-AUTO | wiki | pts=7 | Supreme Warrior | Mega CD 32X | Supreme Warrior | https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Supreme_Warrior_Coverart.png/250px-Supreme_Warrior_Coverart.png
-AUTO | wiki | pts=6 | Hagane | Super Nintendo | Hagane: The Final Conflict | https://upload.wikimedia.org/wikipedia/en/d/da/SNES_Hagane_-_The_Final_Conflict_cover_art.jpg
-AUTO | wiki | pts=6 | Seaquest | Mega Drive | SeaQuest DSV (video game) | https://upload.wikimedia.org/wikipedia/en/7/78/Seaquestdsvsnes.jpg
-REV  | wiki | pts=5 | Mr. Nutz 2 | Mega Drive | Mr. Nutz | https://upload.wikimedia.org/wikipedia/en/c/c0/Mr._Nutz_SMD_cover.PNG
-REV  | wiki | pts=5 | Puzzle Bobble | Neo Geo CD | Puzzle Bobble | https://upload.wikimedia.org/wikipedia/en/0/0a/Puzzle_Bobble_arcade_flyer.jpg
-FAIL | Earthworm Jim Special Edition | Mega CD
+AUTO | wiki | pts=7 | Mr. Nutz 2 | Mega Drive | Mr. Nutz | https://upload.wikimedia.org/wikipedia/en/c/c0/Mr._Nutz_SMD_cover.PNG
+AUTO | wiki | pts=7 | Puzzle Bobble | Neo Geo CD | Puzzle Bobble | https://upload.wikimedia.org/wikipedia/en/0/0a/Puzzle_Bobble_arcade_flyer.jpg
+REV  | wiki | pts=4 | Earthworm Jim Special Edition | Mega CD | Earthworm Jim HD | https://upload.wikimedia.org/wikipedia/en/2/24/EarthwormJimHD.jpg
 FAIL | 4 in 1 Funpak | Game Boy
-AUTO | wiki | pts=7 | Comix Zone | Mega Drive | Comix Zone | https://upload.wikimedia.org/wikipedia/en/1/19/Comix_Zone_Cover.jpeg
-REV  | wiki | pts=4 | Beavis and Butt-Head | Mega Drive | Beavis and Butt-Head | https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Mike_Judge_by_Gage_Skidmore.jpg/500px-Mike_Judge_by_Gage_Skidmore.jpg
-AUTO | wiki | pts=8 | Hover Strike | Jaguar | Hover Strike | https://upload.wikimedia.org/wikipedia/en/thumb/5/55/Atari_Jaguar_Hover_Strike_cover_art.png/250px-Atari_Jaguar_Hover_Strike_cover_art.png
-AUTO | wiki | pts=8 | Prehistorik Man | Super Nintendo | Prehistorik Man | https://upload.wikimedia.org/wikipedia/en/4/43/North_American_box_art.jpg
-AUTO | wiki | pts=6 | Turbo Toons | Super Nintendo | Hanna Barbera's Turbo Toons | https://upload.wikimedia.org/wikipedia/en/b/b4/TurboToonsEUBoxShotSNES.jpg
-REV  | wiki | pts=4 | Mighty Morphin Power Rangers The Movie | Game Gear | Mighty Morphin Power Rangers: The Movie | https://upload.wikimedia.org/wikipedia/en/1/11/Power_rangers_movie_poster.jpg
-REV  | wiki | pts=5 | Super Mario World 2: Yoshi's Island | Super Nintendo | Yoshi's Island | https://upload.wikimedia.org/wikipedia/en/9/9a/Yoshi%27s_Island_%28Super_Mario_World_2%29_box_art.jpg
-AUTO | wiki | pts=8 | FIFA Soccer 96 | Super Nintendo | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/8/8d/FIFA_96_cover.jpg
-REV  | wiki | pts=5 | FIFA 96 | Mega Drive | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/FIFA_96_cover.jpg/120px-FIFA_96_cover.jpg
-AUTO | wiki | pts=8 | Earthworm Jim 2 | Super Nintendo | Earthworm Jim 2 | https://upload.wikimedia.org/wikipedia/en/8/89/Earthworm_Jim_2_Neutral_Cover.png
-AUTO | wiki | pts=8 | Earthworm Jim 2 | Mega Drive | Earthworm Jim 2 | https://upload.wikimedia.org/wikipedia/en/8/89/Earthworm_Jim_2_Neutral_Cover.png
-REV  | wiki | pts=4 | Virtua Fighter Remix | Saturn | Virtua Fighter 2 | https://upload.wikimedia.org/wikipedia/en/0/01/Virtua-fighter-2-box.jpg
-REV  | wiki | pts=4 | Mighty Morphin Power Rangers The Movie | Mega Drive | Mighty Morphin Power Rangers: The Movie | https://upload.wikimedia.org/wikipedia/en/1/11/Power_rangers_movie_poster.jpg
-AUTO | wiki | pts=8 | Vectorman | Mega Drive | Vectorman | https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg
-AUTO | wiki | pts=6 | Maui Mallard | Mega Drive | Maui Mallard in Cold Shadow | https://upload.wikimedia.org/wikipedia/en/8/86/Mauimallard.jpg
-REV  | wiki | pts=5 | Super Skidmarks | Mega Drive | Super Skidmarks | https://upload.wikimedia.org/wikipedia/en/8/8c/Super_skidmarks_cover.png
-AUTO | wiki | pts=8 | International Superstar Soccer Deluxe | Super Nintendo | International Superstar Soccer Deluxe | https://upload.wikimedia.org/wikipedia/en/3/3a/ISS_Deluxe.jpg
+AUTO | wiki | pts=8 | Beavis and Butt-Head | Mega Drive | Beavis and Butt-Head (video game) | https://upload.wikimedia.org/wikipedia/en/f/fc/Beavis_and_Butt-Head_The_Game_print_ad.jpg
+AUTO | wiki | pts=6 | Mighty Morphin Power Rangers The Movie | Game Gear | Mighty Morphin Power Rangers: The Movie (video game) | https://upload.wikimedia.org/wikipedia/en/d/df/Mightymorph01.jpg
+AUTO | wiki | pts=7 | Super Mario World 2: Yoshi's Island | Super Nintendo | Yoshi's Island | https://upload.wikimedia.org/wikipedia/en/9/9a/Yoshi%27s_Island_%28Super_Mario_World_2%29_box_art.jpg
+AUTO | wiki | pts=7 | FIFA 96 | Mega Drive | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/FIFA_96_cover.jpg/120px-FIFA_96_cover.jpg
+AUTO | wiki | pts=6 | Virtua Fighter Remix | Saturn | Virtua Fighter 2 | https://upload.wikimedia.org/wikipedia/en/0/01/Virtua-fighter-2-box.jpg
+AUTO | wiki | pts=6 | Mighty Morphin Power Rangers The Movie | Mega Drive | Mighty Morphin Power Rangers: The Movie (video game) | https://upload.wikimedia.org/wikipedia/en/d/df/Mightymorph01.jpg
+AUTO | wiki | pts=7 | Super Skidmarks | Mega Drive | Super Skidmarks | https://upload.wikimedia.org/wikipedia/en/8/8c/Super_skidmarks_cover.png
 FAIL | Victory Boxing | Saturn
-AUTO | wiki | pts=6 | Separation Anxiety | Mega Drive | Venom/Spider-Man: Separation Anxiety | https://upload.wikimedia.org/wikipedia/en/1/1e/Spider-Man_and_Venom_-_Separation_Anxiety_Coverart.png
-REV  | wiki | pts=5 | FIFA 96 | Mega Drive 32X | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/FIFA_96_cover.jpg/120px-FIFA_96_cover.jpg
-FAIL | Rayman | Saturn
-AUTO | wiki | pts=6 | Tetris 2 | NES | Tetris 2 (1993 video game) | https://upload.wikimedia.org/wikipedia/en/0/0a/Tetris_2_NES.jpg
+AUTO | wiki | pts=7 | FIFA 96 | Mega Drive 32X | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/FIFA_96_cover.jpg/120px-FIFA_96_cover.jpg
+REV  | wiki | pts=4 | Rayman | Saturn | Rayman (video game) | https://upload.wikimedia.org/wikipedia/en/4/45/Rayman_1_cover.png
 FAIL | F. Thomas | Super Nintendo
-REV  | wiki | pts=5 | FIFA 96 | PlayStation | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/FIFA_96_cover.jpg/120px-FIFA_96_cover.jpg
-FAIL | WWF The Arcade Game | Mega Drive
-REV  | wiki | pts=4 | Mighty Morphin Power Rangers The Movie | Super Nintendo | Mighty Morphin Power Rangers: The Movie | https://upload.wikimedia.org/wikipedia/en/1/11/Power_rangers_movie_poster.jpg
+AUTO | wiki | pts=7 | FIFA 96 | PlayStation | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/FIFA_96_cover.jpg/120px-FIFA_96_cover.jpg
+REV  | wiki | pts=5 | WWF The Arcade Game | Mega Drive | WWF WrestleMania: The Arcade Game | https://upload.wikimedia.org/wikipedia/en/1/19/WWF_Wrestlemania_arcade_flyer.png
+AUTO | wiki | pts=6 | Mighty Morphin Power Rangers The Movie | Super Nintendo | Mighty Morphin Power Rangers: The Movie (video game) | https://upload.wikimedia.org/wikipedia/en/d/df/Mightymorph01.jpg
 FAIL | MundoDisco | PlayStation
 FAIL | Aaahhh Real Monsters | Mega Drive
 FAIL | Aaahhh Real Monsters | Super Nintendo
-AUTO | wiki | pts=8 | MechWarrior 3050 | Super Nintendo | MechWarrior 3050 | https://upload.wikimedia.org/wikipedia/en/b/be/Mechwarrior3050SNES_boxart.jpg
-AUTO | wiki | pts=8 | PGA Tour 96 | Mega Drive | PGA Tour 96 | https://upload.wikimedia.org/wikipedia/en/8/89/Pgatourgolf96_MD_cover.jpg
 FAIL | Pinocho | Super Nintendo
-REV  | wiki | pts=4 | Samurai Shodown III | Neo Geo CD | Samurai Shodown III | https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Samurai_Shodown_III_arcade_flyer.jpg/250px-Samurai_Shodown_III_arcade_flyer.jpg
-FAIL | Shockwave 2 | 3DO
-AUTO | wiki | pts=6 | Power Rangers The Fighting Edition | Super Nintendo | Mighty Morphin Power Rangers: The Fighting Edition | https://upload.wikimedia.org/wikipedia/en/4/4f/MM_Power_Rangers_The_Fighting_Edition_SNES_cover.jpg
-REV  | wiki | pts=4 | Star Trek Deep Space Nine | Mega Drive | Star Trek: Deep Space Nine | https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Alaimo%2C_Shimerman_and_Meany.jpg/500px-Alaimo%2C_Shimerman_and_Meany.jpg
-AUTO | wiki | pts=6 | Hang On GP 95 | Saturn | Hang-On GP | https://upload.wikimedia.org/wikipedia/en/4/49/Sega_Saturn_Hang-On_GP_cover_art.jpg
-REV  | wiki | pts=5 | Fifa 96 | Saturn | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/8/8d/FIFA_96_cover.jpg
-AUTO | wiki | pts=6 | Power Rangers The Movie | Game Boy | Mighty Morphin Power Rangers: The Movie (video game) | https://upload.wikimedia.org/wikipedia/en/d/df/Mightymorph01.jpg
-AUTO | wiki | pts=8 | PGA Tour 96 | PlayStation | PGA Tour 96 | https://upload.wikimedia.org/wikipedia/en/8/89/Pgatourgolf96_MD_cover.jpg
-AUTO | wiki | pts=8 | Hi Octane | PlayStation | Hi-Octane | https://upload.wikimedia.org/wikipedia/en/0/0d/Hi-Octane_cover.png
+AUTO | wiki | pts=6 | Samurai Shodown III | Neo Geo CD | Samurai Shodown III | https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Samurai_Shodown_III_arcade_flyer.jpg/250px-Samurai_Shodown_III_arcade_flyer.jpg
+REV  | wiki | pts=4 | Shockwave 2 | 3DO | Adobe Shockwave | https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Shockwave.svg/960px-Shockwave.svg.png
+REV  | wiki | pts=5 | Star Trek Deep Space Nine | Mega Drive | Star Trek: Deep Space Nine: Harbinger | https://upload.wikimedia.org/wikipedia/en/2/20/St-ds9-harbingercover.jpg
+AUTO | wiki | pts=7 | Fifa 96 | Saturn | FIFA Soccer 96 | https://upload.wikimedia.org/wikipedia/en/8/8d/FIFA_96_cover.jpg
 FAIL | Total NBA 96 | PlayStation
 FAIL | La Mansión de las Almas Ocultas | Saturn
 FAIL | Mickey's Wild Adventures | PlayStation
-REV  | wiki | pts=4 | Star Trek Deep Space Nine | Super Nintendo | Star Trek: Deep Space Nine | https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Alaimo%2C_Shimerman_and_Meany.jpg/500px-Alaimo%2C_Shimerman_and_Meany.jpg
-AUTO | wiki | pts=6 | Quarterback Club 96 | Super Nintendo | NFL Quarterback Club 96 | https://upload.wikimedia.org/wikipedia/en/5/59/NFL_Quarterback_Club_96_cover.jpg
-AUTO | wiki | pts=8 | Aero Fighters 3 | Neo Geo CD | Aero Fighters 3 | https://upload.wikimedia.org/wikipedia/en/1/19/Aero_Fighters_3_arcade_flyer.jpg
+AUTO | wiki | pts=8 | Star Trek Deep Space Nine | Super Nintendo | Star Trek: Deep Space Nine – Crossroads of Time | https://upload.wikimedia.org/wikipedia/en/7/76/Star_Trek_Deep_Space_Nine_%E2%80%93_Crossroads_of_Time_SNES.jpg
 FAIL | Pinocho | Game Boy
