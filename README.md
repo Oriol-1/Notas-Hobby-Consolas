@@ -50,7 +50,7 @@ git clone https://github.com/Oriol-1/Notas-Hobby-Consolas.git
 cd Notas-Hobby-Consolas
 
 # 2. Lanza el servidor local
-npx serve .
+npm start
 ```
 
 La primera vez npm descargará `serve` automáticamente. Verás:
@@ -63,6 +63,10 @@ La primera vez npm descargará `serve` automáticamente. Verás:
 ```
 
 Abre **<http://localhost:3000>** en el navegador. Para detener: `Ctrl + C`.
+
+> **¿Por qué `npm start` y no `npx serve .` directamente?**
+> El `package.json` fija el puerto al 3000. Así siempre sabes dónde está la app y no se abren instancias en puertos aleatorios si lanzas el comando varias veces.
+> Si al ejecutar `npm start` te aparece *"port already in use"*, es que ya hay una instancia corriendo — abre el navegador directamente en <http://localhost:3000>.
 
 ---
 
@@ -150,6 +154,7 @@ notashobby/
 ├── styles.css               → Todos los estilos (diseño glassmorphism)
 ├── script.js                → Lógica: filtros, vistas, modal, enlace YouTube
 ├── datos.json               → Base de datos principal (1 492 juegos)
+├── package.json             → Define el comando npm start (servidor local)
 ├── enrich-images.js         → Script: busca portadas RAWG + Wikipedia
 ├── enrich-descriptions.js   → Script: busca descripciones en Wikipedia ES/EN
 ├── wiki-only.js             → Script: busca portadas solo en Wikipedia

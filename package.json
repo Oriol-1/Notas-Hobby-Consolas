@@ -1,0 +1,8 @@
+{
+  "name": "notashobby",
+  "version": "1.0.0",
+  "description": "Notas de hobby sobre consolas y videojuegos (Hobby Consolas 1991-1996)",
+  "scripts": {
+    "start": "npx serve . --listen 3000"
+  }
+}
