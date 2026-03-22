@@ -225,7 +225,7 @@ async function wikiGetMediaImage(titleOrSlug) {
   } catch { return null; }
 }
 
-// Búsqueda MediaWiki (full-text) para encontrar artículos relevantes
+// Búsqueda MediaWiki full-text
 async function wikiSearch(query, limit = 5) {
   const q = encodeURIComponent(query);
   const url = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${q}&srlimit=${limit}&format=json&origin=*`;
@@ -239,7 +239,23 @@ async function wikiSearch(query, limit = 5) {
   } catch { return []; }
 }
 
-function scoreWiki(nombre, consola, titulo, desc) {
+// OpenSearch — más flexible, devuelve también redireccionados
+async function wikiOpenSearch(query, limit = 8) {
+  const q = encodeURIComponent(query);
+  const url = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${q}&limit=${limit}&format=json`;
+  let r;
+  try { r = await get(url, WIKI_HEADERS); } catch { return []; }
+  if (r.s === 429) return '429';
+  if (r.s !== 200) return [];
+  try {
+    const d = JSON.parse(r.b);
+    return Array.isArray(d[1]) ? d[1] : [];
+  } catch { return []; }
+}
+
+// scoreWiki: puntúa cuánto coincide un artículo con el juego buscado.
+// Incluye verificación de año: +2 pts si el año aparece en la descripción.
+function scoreWiki(nombre, consola, titulo, desc, año) {
   let pts = 0;
   const s = sim(nombre, titulo);
   if (s >= 0.95) pts += 4;
@@ -251,25 +267,42 @@ function scoreWiki(nombre, consola, titulo, desc) {
   const syns = WIKI_CONSOLE_SYN[consola] || [];
   if (syns.some(kw => d.includes(kw))) pts += 3;
   if (d.includes('video game') || d.includes('video-game')) pts += 1;
+
+  // Penalizar artículos que son películas/TV, no videojuegos
+  const isGame = d.includes('video game') || d.includes('video-game') || d.includes('arcade') || syns.some(kw => d.includes(kw));
+  const isFilm = d.includes(' film') || d.includes(' movie') || d.includes('television') || d.includes(' series') || d.includes('animated');
+  if (isFilm && !isGame) pts -= 4;
+
+  // Verificación de año: si el artículo menciona el año del juego (±1) suma puntos
+  if (año) {
+    const y = parseInt(año);
+    if (d.includes(String(y)) || d.includes(String(y - 1)) || d.includes(String(y + 1))) pts += 2;
+  }
+
   return pts;
 }
 
 async function buscarWiki(nombre, consola, año) {
-  // Generar variantes de slug
-  const sinSub = nombre.replace(/\s*[:–]\s*.+$/, '').trim();
-  // Quitar comillas ASCII/tipográficas del slug
-  const cleanName = nombre.replace(/["'`''""]/g, '').replace(/\s+/g, ' ').trim();
+  const sinSub   = nombre.replace(/\s*[:–]\s*.+$/, '').trim();
+  const cleanName = nombre.replace(/["'`\u2018\u2019\u201c\u201d]/g, '').replace(/\s+/g, ' ').trim();
   const cleanSub  = cleanName.replace(/\s*[:–]\s*.+$/, '').trim();
   const builds = [cleanName, cleanSub, sinSub, nombre]
     .filter((v, i, a) => v && a.indexOf(v) === i);
 
+  // Slugs directos: nombre base + variantes con año y tipo
   const direct = [];
   for (const b of builds) {
     const base = b.replace(/\s+/g, '_');
-    direct.push(base, `${base}_(video_game)`, `${base}_(game)`, `${base}_(${año}_video_game)`);
+    direct.push(
+      base,
+      `${base}_(video_game)`,
+      `${base}_(game)`,
+      `${base}_(${año}_video_game)`,
+      `${base}_(${año})`,
+    );
   }
 
-  // Helper: obtener imagen del artículo (summary o media-list como fallback)
+  // Helper: obtener imagen (summary lead o media-list)
   async function getWikiImg(res, title) {
     if (res.img) return res.img;
     await delay(300);
@@ -278,12 +311,27 @@ async function buscarWiki(nombre, consola, año) {
     return mImg || null;
   }
 
-  // 1. Intentos directos
+  // Helper: evaluar un título encontrado y devolver resultado si supera umbral
+  async function evalTitle(title, minPts = 4) {
+    const res = await wikiGetSummary(title);
+    if (res === '429') { await delay(25000); return null; }
+    if (!res) return null;
+    const pts = scoreWiki(nombre, consola, res.title, res.desc, año);
+    if (pts >= minPts) {
+      const img = await getWikiImg(res, res.title);
+      if (img) return { img, source: 'wiki', wikiTitle: res.title, pts };
+    }
+    return null;
+  }
+
+  const syns = WIKI_CONSOLE_SYN[consola] || [];
+
+  // ── PASO 1: Slugs directos ────────────────────────────────────────────────
   for (const slug of [...new Set(direct)]) {
     const res = await wikiGetSummary(slug);
     if (res === '429') { await delay(25000); continue; }
     if (!res) { await delay(300); continue; }
-    const pts = scoreWiki(nombre, consola, res.title, res.desc);
+    const pts = scoreWiki(nombre, consola, res.title, res.desc, año);
     if (pts >= 4) {
       const img = await getWikiImg(res, res.title);
       if (img) return { img, source: 'wiki', wikiTitle: res.title, pts };
@@ -291,38 +339,75 @@ async function buscarWiki(nombre, consola, año) {
     await delay(400);
   }
 
-  // 2. Búsqueda MediaWiki con nombre + consola
-  const syns = WIKI_CONSOLE_SYN[consola] || [];
-  const query = `${nombre} ${syns[0] || consola} game`;
-  const searchRes = await wikiSearch(query);
-  if (searchRes === '429') { await delay(25000); }
-  else if (Array.isArray(searchRes)) {
-    for (const title of searchRes) {
-      await delay(600);
-      const res = await wikiGetSummary(title);
-      if (res === '429') { await delay(25000); continue; }
-      if (!res) continue;
-      const pts = scoreWiki(nombre, consola, res.title, res.desc);
-      if (pts >= 4) {
-        const img = await getWikiImg(res, title);
-        if (img) return { img, source: 'wiki', wikiTitle: res.title, pts };
-      }
+  // ── PASO 2: OpenSearch con nombre + año (más flexible) ───────────────────
+  await delay(500);
+  const osRes1 = await wikiOpenSearch(`${cleanName} ${año}`);
+  if (osRes1 === '429') { await delay(25000); }
+  else if (Array.isArray(osRes1)) {
+    for (const title of osRes1) {
+      await delay(500);
+      const r = await evalTitle(title, 4);
+      if (r) return r;
     }
   }
 
-  // 3. Búsqueda MediaWiki sólo con nombre del juego
+  // ── PASO 3: OpenSearch nombre solo ───────────────────────────────────────
+  await delay(500);
+  const osRes2 = await wikiOpenSearch(`${cleanName} video game`);
+  if (osRes2 === '429') { await delay(25000); }
+  else if (Array.isArray(osRes2)) {
+    for (const title of osRes2) {
+      await delay(500);
+      const r = await evalTitle(title, 4);
+      if (r) return r;
+    }
+  }
+
+  // ── PASO 4: Full-text search nombre + consola ─────────────────────────────
   await delay(600);
-  const searchRes2 = await wikiSearch(`${nombre} video game`, 4);
-  if (Array.isArray(searchRes2)) {
-    for (const title of searchRes2) {
+  const q1 = `${nombre} ${syns[0] || consola} game`;
+  const sr1 = await wikiSearch(q1);
+  if (sr1 === '429') { await delay(25000); }
+  else if (Array.isArray(sr1)) {
+    for (const title of sr1) {
       await delay(600);
-      const res = await wikiGetSummary(title);
-      if (res === '429') { await delay(25000); continue; }
-      if (!res) continue;
-      const pts = scoreWiki(nombre, consola, res.title, res.desc);
-      if (pts >= 4) {
-        const img = await getWikiImg(res, title);
-        if (img) return { img, source: 'wiki', wikiTitle: res.title, pts };
+      const r = await evalTitle(title, 4);
+      if (r) return r;
+    }
+  }
+
+  // ── PASO 5: Full-text search nombre + año ────────────────────────────────
+  await delay(600);
+  const q2 = `${nombre} ${año} video game`;
+  const sr2 = await wikiSearch(q2, 6);
+  if (Array.isArray(sr2)) {
+    for (const title of sr2) {
+      await delay(600);
+      const r = await evalTitle(title, 4);
+      if (r) return r;
+    }
+  }
+
+  // ── PASO 6: Full-text solo nombre (umbral más bajo con año confirmado) ────
+  await delay(600);
+  const sr3 = await wikiSearch(`${nombre} video game`, 5);
+  if (Array.isArray(sr3)) {
+    for (const title of sr3) {
+      await delay(600);
+      const r = await evalTitle(title, 4);
+      if (r) return r;
+    }
+  }
+
+  // ── PASO 7: OpenSearch sólo con subtítulo si el nombre es largo ──────────
+  if (sinSub && sinSub !== cleanName && sinSub.split(' ').length >= 2) {
+    await delay(500);
+    const osRes3 = await wikiOpenSearch(`${sinSub} ${año} video game`);
+    if (Array.isArray(osRes3)) {
+      for (const title of osRes3) {
+        await delay(500);
+        const r = await evalTitle(title, 4);
+        if (r) return r;
       }
     }
   }
