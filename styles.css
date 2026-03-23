@@ -1099,23 +1099,27 @@ td.td-nota { text-align: center; }
     top: 14px;
     right: 14px;
     z-index: 10;
-    width: 34px;
-    height: 34px;
-    border: none;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.07);
-    color: var(--hc-text-muted);
-    font-size: 16px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
     line-height: 1;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.18s, color 0.18s;
+    transition: background 0.18s, border-color 0.18s, transform 0.15s;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 .modal-close:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
 }
 
 .modal-cover {
