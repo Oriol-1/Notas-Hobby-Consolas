@@ -1357,8 +1357,8 @@ td.td-nota { text-align: center; }
 
     /* ── Tabla: ocultar columnas menos importantes ── */
     .td-img, th:nth-child(1)  { display: none; }
-    th:nth-child(6), td:nth-child(6),
-    th:nth-child(9), td:nth-child(9) { display: none; }
+    th:nth-child(4), td:nth-child(4),
+    th:nth-child(6), td:nth-child(6) { display: none; }
     th, td { font-size: 0.76rem; padding: 7px 6px; }
 
     /* ── Cards ── */
