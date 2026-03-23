@@ -17,16 +17,27 @@ Aplicación web estática para consultar las notas y análisis de videojuegos pu
 
 ## Índice
 
-1. [Ejecutar en local](#1-ejecutar-en-local)
-2. [Cómo encuentra las imágenes de portada](#2-cómo-encuentra-las-imágenes-de-portada)
-3. [Gestión de imágenes (CLI)](#3-gestión-de-imágenes-cli)
-4. [Cómo redirige al video de gameplay](#4-cómo-redirige-al-video-de-gameplay)
-5. [Estructura de archivos](#5-estructura-de-archivos)
-6. [Scripts de enriquecimiento](#6-scripts-de-enriquecimiento)
-7. [Estructura de datos.json](#7-estructura-de-datosjson)
-8. [Variables de entorno (.env)](#8-variables-de-entorno-env)
-9. [Subir cambios al repositorio](#9-subir-cambios-al-repositorio)
-10. [Despliegue en Vercel](#10-despliegue-en-vercel)
+- [Notas Hobby Consolas 1991–1996](#notas-hobby-consolas-19911996)
+  - [¿Qué contiene?](#qué-contiene)
+  - [Índice](#índice)
+  - [1. Ejecutar en local](#1-ejecutar-en-local)
+  - [2. Cómo encuentra las imágenes de portada](#2-cómo-encuentra-las-imágenes-de-portada)
+  - [3. Gestión de imágenes (CLI)](#3-gestión-de-imágenes-cli)
+    - [Buscar la imagen de un juego](#buscar-la-imagen-de-un-juego)
+    - [Cambiar la URL de imagen](#cambiar-la-url-de-imagen)
+    - [Descargar todas las imágenes como backup](#descargar-todas-las-imágenes-como-backup)
+  - [4. Cómo redirige al video de gameplay](#4-cómo-redirige-al-video-de-gameplay)
+  - [5. Estructura de archivos](#5-estructura-de-archivos)
+  - [6. Scripts de enriquecimiento](#6-scripts-de-enriquecimiento)
+    - [Flujo recomendado desde cero](#flujo-recomendado-desde-cero)
+    - [wiki-precise: revisión de candidatos](#wiki-precise-revisión-de-candidatos)
+  - [7. Estructura de datos.json](#7-estructura-de-datosjson)
+  - [8. Variables de entorno (.env)](#8-variables-de-entorno-env)
+    - [8.1 Obtener la clave RAWG](#81-obtener-la-clave-rawg)
+    - [8.2 Configurarla en local](#82-configurarla-en-local)
+  - [9. Subir cambios al repositorio](#9-subir-cambios-al-repositorio)
+  - [10. Despliegue en Vercel](#10-despliegue-en-vercel)
+    - [Pasos para desplegar](#pasos-para-desplegar)
 
 ---
 
