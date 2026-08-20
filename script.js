@@ -61,15 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let consolaMarcaMap = {};
     // ── MAPA DE COLORES POR PLATAFORMA ──────────────────────────
     const PLATFORM_COLORS = {
-        "sega":       { bg: "#003f7a", class: "sega",       plat: "sega" },
-        "nintendo":   { bg: "#7a001a", class: "nintendo",   plat: "nintendo" },
-        "atari":      { bg: "#7a2b00", class: "atari",      plat: "atari" },
-        "snk":        { bg: "#1a5c1a", class: "neogeo",     plat: "neogeo" },
-        "nec":        { bg: "#4a206a", class: "turbografx", plat: "turbografx" },
-        "panasonic":  { bg: "#4a1a6a", class: "neogeo",     plat: "neogeo" },  // 3DO
-        "philips":    { bg: "#005a5a", class: "turbografx", plat: "turbografx" }, // CD-i
-        "sony":       { bg: "#00237a", class: "nintendo",   plat: "nintendo" },  // PlayStation
-        "default":    { bg: "#2a3a50", class: "",           plat: "" }
+        "sega":       { bg: "#14448c", class: "sega",       plat: "sega" },
+        "nintendo":   { bg: "#c8102e", class: "nintendo",   plat: "nintendo" },
+        "atari":      { bg: "#d1590a", class: "atari",      plat: "atari" },
+        "snk":        { bg: "#1b7a3c", class: "neogeo",     plat: "neogeo" },
+        "nec":        { bg: "#7b2d8e", class: "turbografx", plat: "turbografx" },
+        "panasonic":  { bg: "#5b4a9e", class: "neogeo",     plat: "neogeo" },  // 3DO
+        "philips":    { bg: "#0d6e6a", class: "turbografx", plat: "turbografx" }, // CD-i
+        "sony":       { bg: "#2b2723", class: "nintendo",   plat: "nintendo" },  // PlayStation
+        "default":    { bg: "#3a342c", class: "",           plat: "" }
     };
 
     function getPlatformInfo(marca) {
@@ -103,6 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
             .slice(0, 2)
             .map(w => w[0]?.toUpperCase() || "")
             .join("");
+    }
+
+    // ── REFERENCIA DE HEMEROTECA (Nº14 · OCT 1991 · P.62) ───────
+    function buildRef(juego) {
+        const partes = [];
+        if (juego["Número"]) partes.push("N.º" + escapeHtml(juego["Número"]));
+        // Mes a tres letras: la referencia debe caber en una sola línea
+        const mes = (juego["Mes"] || "").slice(0, 3);
+        const fecha = [mes, juego["Año"]].filter(Boolean).join(" ");
+        if (fecha) partes.push(escapeHtml(fecha));
+        const ref = partes.join(" · ");
+        // La página va marcada aparte: en pantalla estrecha la oculta el CSS
+        if (!juego["Pag"]) return ref;
+        return ref + '<span class="ref-pag"> · P.' + escapeHtml(juego["Pag"]) + '</span>';
     }
 
     // ── RESALTADO DE TEXTO ──────────────────────────────────────
@@ -180,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="card-title">${highlight(juego["Juego"], state.query)}</div>
                     <div class="card-meta">${highlight(juego["Desarrollador"] || "", state.query)}</div>
                     <div class="card-footer">
-                        <span class="card-anio">${escapeHtml(juego["Mes"] || "")} ${escapeHtml(juego["Año"] || "")}</span>
+                        <span class="card-anio">${buildRef(juego)}</span>
                         <span class="badge-nota ${notaClass}">${escapeHtml(juego["Nota"] || "—")}</span>
                     </div>
                 </div>
@@ -759,13 +773,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateSliderVisual(n) {
         const pct = n + "%";
-        let bg = "var(--hc-blue)";
-        if      (n >= 90) bg = "#1b5e20";
-        else if (n >= 80) bg = "#2e7d32";
-        else if (n >= 70) bg = "#f9a825";
-        else if (n >= 60) bg = "#e65100";
-        else if (n >  0)  bg = "#c62828";
+        let bg = "#1a1714", fg = "#f2ede1";
+        if      (n >= 90) { bg = "#d81e1e"; fg = "#f2ede1"; }
+        else if (n >= 80) { bg = "#f5c518"; fg = "#1a1714"; }
+        else if (n >= 70) { bg = "#1a1714"; fg = "#f2ede1"; }
+        else if (n >  0)  { bg = "#8d8375"; fg = "#f2ede1"; }
         notaMinLabel.style.background = bg;
+        notaMinLabel.style.color      = fg;
         // Mover indicador sobre la barra de degradado
         if (notaGradientBar) {
             notaGradientBar.style.setProperty("--slider-pct", pct);
@@ -791,6 +805,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sliderNota.value = 0;
         notaMinLabel.textContent = "0";
         notaMinLabel.style.background = "";
+        notaMinLabel.style.color      = "";
         updateSliderVisual(0);
         // Resetear ordenamiento — los datos vuelven al orden original
         currentSort = { column: null, order: "asc" };

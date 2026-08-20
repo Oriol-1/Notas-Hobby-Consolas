@@ -5,97 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notas Hobby Consolas</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="theme-color" content="#070f1d">
+    <meta name="theme-color" content="#e0201b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="header-inner">
-            <div class="header-logo">
-                <span class="logo-hc">HC</span>
-                <div class="header-titles">
-                    <h1>Notas Hobby Consolas</h1>
-                    <p class="header-subtitle">Base de datos 1991 – 1996</p>
+    <!-- ══ CABECERA / MANCHETA ══════════════════════════════════ -->
+    <header class="masthead site-header">
+
+        <!-- Banda roja: logotipo + cabecera -->
+        <div class="mast-band">
+            <div class="mast-inner">
+                <div class="mast-brand">
+                    <span class="mast-hc" aria-hidden="true">HC</span>
+                    <div class="mast-words">
+                        <h1 class="mast-title">Hobby Consolas</h1>
+                        <p class="mast-kicker">Archivo de análisis</p>
+                    </div>
+                </div>
+
+                <div class="mast-stamp" aria-hidden="true">
+                    <span class="stamp-label">Números</span>
+                    <span class="stamp-years">1991<i>—</i>1996</span>
                 </div>
             </div>
-            <div class="header-credits">
-                <p>Creado por <strong>Oriol Alonso</strong></p>
-                <div class="header-links">
+
+            <!-- Marcas de registro: guiño a las pruebas de imprenta -->
+            <span class="reg-mark reg-tl" aria-hidden="true"></span>
+            <span class="reg-mark reg-tr" aria-hidden="true"></span>
+        </div>
+
+        <!-- Banda negra: créditos + redes -->
+        <div class="mast-credits">
+            <div class="mast-inner">
+                <p class="credit-line">Creado por <strong>Oriol Alonso</strong></p>
+                <div class="mast-links">
                     <a href="https://twitter.com/senyor_mayor" target="_blank" rel="noopener noreferrer" class="btn-social btn-twitter">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.735-8.835L1.254 2.25H8.08l4.261 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.735-8.835L1.254 2.25H8.08l4.261 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
                         X / Twitter
                     </a>
                     <a href="https://www.youtube.com/@senormayorYT" target="_blank" rel="noopener noreferrer" class="btn-social btn-youtube">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         YouTube
                     </a>
                 </div>
-                <p class="texto-legal">Este sitio es solo para consulta. No poseo los derechos de las revistas ni los juegos mostrados.</p>
+                <p class="texto-legal">Sitio de consulta. No poseo los derechos de las revistas ni de los juegos mostrados.</p>
             </div>
         </div>
+
     </header>
 
     <main class="container">
 
-        <!-- CONSOLAS (flujo normal, se desplazan con el scroll) -->
-        <div id="barra-plataformas" class="barra-plataformas" hidden></div>
+        <!-- ══ ÍNDICE DE PLATAFORMAS ═══════════════════════════ -->
+        <section class="seccion-plataformas">
+            <h2 class="rotulo-seccion"><span>Plataformas</span></h2>
+            <div id="barra-plataformas" class="barra-plataformas" hidden></div>
+        </section>
 
-        <!-- STICKY: SOLO EL BUSCADOR -->
+        <!-- ══ CONTROLES (pegajosos) ═══════════════════════════ -->
         <div class="sticky-controls">
-
-            <!-- BARRA DE CONTROLES -->
             <div class="toolbar">
                 <div class="search-wrapper">
-                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                    <input type="text" id="search-input" placeholder="Buscar juego, consola, desarrollador...">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input type="text" id="search-input" placeholder="Buscar juego, consola, desarrollador…">
                     <button id="reset-button" class="btn-clear" title="Limpiar búsqueda" aria-label="Limpiar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="15" height="15" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
                     </button>
                 </div>
                 <div class="toolbar-actions">
                     <button id="btn-filtros" class="btn-tool" aria-expanded="false">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15" aria-hidden="true"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
                         <span class="btn-tool-label">Filtros</span>
                         <span id="filtros-badge" class="badge-count" hidden>0</span>
                     </button>
                     <div class="view-toggle" role="group" aria-label="Cambiar vista">
-                        <button id="btn-vista-cards" class="btn-view active" title="Vista tarjetas" aria-pressed="true">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 3h7v7H3zm0 11h7v7H3zm11-11h7v7h-7zm0 11h7v7h-7z"/></svg>
+                        <button id="btn-vista-cards" class="btn-view active" title="Vista fichas" aria-pressed="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M3 3h7v7H3zm0 11h7v7H3zm11-11h7v7h-7zm0 11h7v7h-7z"/></svg>
                         </button>
-                        <button id="btn-vista-tabla" class="btn-view" title="Vista tabla" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                        <button id="btn-vista-tabla" class="btn-view" title="Vista índice" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="17" height="17" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
                         </button>
                     </div>
                 </div>
             </div>
-
         </div><!-- /.sticky-controls -->
 
-        <!-- FILTROS ACTIVOS -->
+        <!-- ══ FILTROS ACTIVOS ═════════════════════════════════ -->
         <div id="filtros-activos" class="filtros-activos" hidden></div>
 
-        <!-- CONTADORES -->
+        <!-- ══ RECUENTO ════════════════════════════════════════ -->
         <div class="resultados-bar">
+            <span class="resultados-etiqueta">En este archivo</span>
             <span id="contador-juegos" class="contador-texto">0 juegos</span>
         </div>
 
-        <!-- ESTADO VACÍO -->
+        <!-- ══ SIN RESULTADOS ══════════════════════════════════ -->
         <div id="estado-vacio" class="estado-vacio" hidden>
-            <svg viewBox="0 0 64 64" fill="none" width="80" height="80"><circle cx="32" cy="32" r="30" stroke="#003f88" stroke-width="2" opacity="0.3"/><path d="M20 24l12 8 12-8" stroke="#003f88" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="22" r="2" fill="#f5c518"/><circle cx="40" cy="22" r="2" fill="#f5c518"/><path d="M24 40s2 4 8 4 8-4 8-4" stroke="#d32f2f" stroke-width="2" stroke-linecap="round"/></svg>
-            <h2>Sin resultados</h2>
-            <p>No se encontraron juegos con los filtros actuales.</p>
-            <button id="btn-reset-vacio" class="btn-primary">Ver todos los juegos</button>
+            <p class="vacio-marca">404</p>
+            <h2>Página no encontrada</h2>
+            <p class="vacio-texto">Ningún análisis de la hemeroteca coincide con los filtros actuales.</p>
+            <button id="btn-reset-vacio" class="btn-primary">Volver al índice completo</button>
         </div>
 
-        <!-- VISTA TARJETAS -->
+        <!-- ══ VISTA FICHAS ════════════════════════════════════ -->
         <div id="vista-cards" class="vista-cards"></div>
 
-        <!-- VISTA TABLA -->
+        <!-- ══ VISTA ÍNDICE ════════════════════════════════════ -->
         <div id="vista-tabla" class="table-container" hidden>
             <table id="tabla-juegos">
                 <thead>
@@ -118,7 +137,7 @@
 
     </main>
 
-    <!-- ── MODAL DETALLE DE JUEGO ──────────────────────────────── -->
+    <!-- ══ MODAL: FICHA AMPLIADA ═══════════════════════════════ -->
     <div id="modal-juego" class="modal-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
         <div class="modal-panel">
             <button class="modal-close" id="modal-close" aria-label="Cerrar">&#x2715;</button>
@@ -138,13 +157,22 @@
         </div>
     </div>
 
+    <!-- ══ PIE / COLOFÓN ═══════════════════════════════════════ -->
     <footer class="site-footer">
-        <p>Notas Hobby Consolas 1991–1996 · Creado por <strong>Oriol Alonso</strong> · Solo fines de consulta</p>
+        <div class="colofon">
+            <span class="colofon-hc" aria-hidden="true">HC</span>
+            <p class="colofon-linea">
+                <strong>Notas Hobby Consolas</strong>
+                <span class="colofon-sep">·</span> Archivo 1991—1996
+                <span class="colofon-sep">·</span> Creado por <strong>Oriol Alonso</strong>
+            </p>
+            <p class="colofon-legal">Solo fines de consulta</p>
+        </div>
     </footer>
 
-    <!-- BOTÓN SCROLL TO TOP -->
+    <!-- VOLVER ARRIBA -->
     <button id="btn-scroll-top" class="btn-scroll-top" aria-label="Volver arriba" hidden>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22"><path d="M18 15l-6-6-6 6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="20" height="20" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
     <script src="script.js"></script>
