@@ -13,3 +13,6 @@ images/*.gif
 images/manifest.json
 
 
+
+# Logs de los scripts de enriquecimiento (solo locales)
+scripts/*.log

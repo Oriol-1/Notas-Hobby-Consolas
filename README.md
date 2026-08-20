@@ -70,15 +70,15 @@ La primera vez npm descargará `serve` automáticamente. Verás:
 ```text
    ┌──────────────────────────────────────────┐
    │   Serving!                               │
-   │   - Local:    http://localhost:3000      │
+   │   - Local:    http://localhost:3010      │
    └──────────────────────────────────────────┘
 ```
 
-Abre **<http://localhost:3000>** en el navegador. Para detener: `Ctrl + C`.
+Abre **<http://localhost:3010>** en el navegador. Para detener: `Ctrl + C`.
 
 > **¿Por qué `npm start` y no `npx serve .` directamente?**
-> El `package.json` fija el puerto al 3000. Así siempre sabes dónde está la app y no se abren instancias en puertos aleatorios si lanzas el comando varias veces.
-> Si al ejecutar `npm start` te aparece *"port already in use"*, es que ya hay una instancia corriendo — abre el navegador directamente en <http://localhost:3000>.
+> El `package.json` fija el puerto al 3010. Así siempre sabes dónde está la app y no se abren instancias en puertos aleatorios si lanzas el comando varias veces. Se usa el 3010 y no el 3000 para no chocar con `next dev` de otros proyectos (una pestaña vieja de otra app en el mismo puerto genera 404 fantasma en el log).
+> Si al ejecutar `npm start` te aparece *"port already in use"*, es que ya hay una instancia corriendo — abre el navegador directamente en <http://localhost:3010>.
 
 ---
 

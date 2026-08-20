@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Notas de hobby sobre consolas y videojuegos (Hobby Consolas 1991-1996)",
   "scripts": {
-    "start": "npx serve . --listen 3000",
+    "start": "npx serve . --listen 3010",
 
     "find-image":          "node scripts/find-image.js",
     "set-image":           "node scripts/set-image.js",
